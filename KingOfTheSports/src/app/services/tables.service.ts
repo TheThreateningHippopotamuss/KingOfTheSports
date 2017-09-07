@@ -7,19 +7,20 @@ import { ApiHelper } from './../helpers/apiHelper';
 
 @Injectable()
 
-export class CompetitionsService {
+export class TablesService {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());
-    private competitionsUrl = ApiHelper.competitionUrls();
+    private tablesUrl;
     private teamFixturesUrl;
 
     constructor(private http: Http) { }
 
     // TODO need change any with Model for competitions
-    getAll(): Observable<any> {
+    get(id): Observable<any> {
+        this.tablesUrl = ApiHelper.tableUrls(id);
 
         return this.http.get(
-            this.competitionsUrl,
+            this.tablesUrl.competitionLeagueTable,
             { headers: this.headers })
             .map(r => r.json());
     }
