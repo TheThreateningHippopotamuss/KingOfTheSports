@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 /*!
  * Start Bootstrap - Grayscale v4.0.0-beta (http://startbootstrap.com/template-overviews/grayscale)
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
-@import "./vendor/font-awesome/css/font-awesome.min.css";
-
+@import "./assets/vendor/font-awesome/css/font-awesome.min.css";
+@import "./assets/vendor/bootstrap/css/bootstrap.min.css";
 body {
     font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     position: relative;
@@ -131,7 +133,7 @@ a:hover {
 .masthead {
     display: table;
     width: 100%;
-    height: auto;
+    height: 1080px;
     padding: 200px 0;
     text-align: center;
     color: white;
@@ -141,6 +143,7 @@ a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin-top: 60px;
 }
 
 .masthead .intro-body {
@@ -268,6 +271,10 @@ ul.banner-social-buttons {
 
 footer {
     padding: 50px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer p {
