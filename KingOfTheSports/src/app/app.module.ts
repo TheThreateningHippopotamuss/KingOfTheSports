@@ -1,3 +1,4 @@
+import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -7,6 +8,7 @@ import { AlertModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './components/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     AlertModule.forRoot(),
+    AuthModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
