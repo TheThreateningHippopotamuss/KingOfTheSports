@@ -1,3 +1,4 @@
+import { CompetitionsService } from './services/competitions.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,8 +9,15 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent implements OnInit {
   title: string;
+  competitions: any;
+  constructor(private competitionsService: CompetitionsService) { }
 
   ngOnInit(): void {
+    this.competitionsService.getAll().subscribe(c => this.competitions = c);
     this.title = '"King of the sports"';
+  }
+
+  a() {
+    console.log(this.competitions);
   }
 }
