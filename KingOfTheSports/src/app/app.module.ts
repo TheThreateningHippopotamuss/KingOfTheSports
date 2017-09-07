@@ -1,3 +1,5 @@
+import { Http, HttpModule } from '@angular/http';
+import { CompetitionsService } from './services/competitions.service';
 import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -22,9 +24,10 @@ import { AuthModule } from './components/auth/auth.module';
     AppRoutingModule,
     AlertModule.forRoot(),
     AuthModule,
-    ContactModule
+    ContactModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [CompetitionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
