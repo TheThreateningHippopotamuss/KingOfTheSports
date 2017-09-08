@@ -10,7 +10,8 @@ const routes: Routes = [
       {path: 'home', component: HomeComponent},
       {path: 'contact', component: ContactComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent}
+      {path: 'register', component: RegisterComponent},
+      { path: '**', redirectTo: 'home'},
 ];
 @NgModule({
       imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
