@@ -8,9 +8,10 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {path: 'home', component: HomeComponent},
-      {path: 'contact', component: ContactComponent},
-      {path: 'admin', loadChildren: './components/auth/auth.module.ts#AuthModule'},
+      { path: 'home', component: HomeComponent},
+      { path: 'contact', component: ContactComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'register', component: RegisterComponent},
       // {path: 'admin/login', component: LoginComponent},
       // {path: 'admin/register', component: RegisterComponent},
       { path: '**', redirectTo: 'home' },
