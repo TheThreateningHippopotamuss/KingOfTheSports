@@ -10,8 +10,7 @@ import { ApiHelper } from './../helpers/apiHelper';
 export class CompetitionsService {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());
-    private competitionsUrl = ApiHelper.competitionUrls();
-    private teamFixturesUrl;
+    private competitionsUrl: string = ApiHelper.competitionUrls();
 
     constructor(private http: Http) { }
 
