@@ -1,17 +1,39 @@
+import { FormsModule } from '@angular/forms/';
 import { AuthService } from './../../services/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RouterModule, Routes } from '@angular/router'
+import { AuthNavComponent } from './authNav/authNav.component';
+import { AuthComponent } from './authComponent/auth.component';
+
+const AdminRoutes: Routes = [
+  {
+    path: 'admin',
+    component: AuthComponent,
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: RegisterComponent },
+      { path: '', component: AuthNavComponent, canActivate: [AuthService] },      
+    ]
+  }
+]
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(AdminRoutes)
   ],
-  declarations: [AuthComponent,
+  exports: [
+    RouterModule,
+  ],
+  declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AuthNavComponent,
+    AuthComponent
 ],
 providers: [
   AuthService,

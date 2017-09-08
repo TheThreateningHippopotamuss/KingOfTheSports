@@ -16,21 +16,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-export const firebaseConfig = {
-  apiKey: 'AIzaSyB27Mt_ANgN-VWTAP1fLbDY70UfNesFWto',
-  authDomain: 'king-of-the-sports.firebaseapp.com',
-  databaseURL: 'https://king-of-the-sports.firebaseio.com',
-  projectId: 'king-of-the-sports',
-  storageBucket: 'king-of-the-sports.appspot.com',
-  messagingSenderId: '724985830867'
-};
-
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +31,7 @@ export const firebaseConfig = {
     ContactModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],

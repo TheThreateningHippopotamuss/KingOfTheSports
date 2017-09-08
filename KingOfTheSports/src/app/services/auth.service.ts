@@ -1,34 +1,73 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { AngularFireAuth } from "angularfire2/auth";
-import { Observable } from "rxjs/Observable";
+import { 
+    CanActivate, 
+    Router, 
+    ActivatedRouteSnapshot, 
+    RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
-export class AuthService {
+export class AuthService implements CanActivate {  
 
-private authState: Observable<firebase.User>
-private currentUser: firebase.User = null;     
+    isUserLoggedIn: boolean = false;
 
-constructor(private afAuth: AngularFireAuth) {
-  }     
-  login() {
-    this.authState = this.afAuth.authState;
-    this.authState.subscribe(user => {
-      if (user) {
-        console.log(user);
-        this.currentUser = user;
-      } else {
-          console.log('no user')
-        this.currentUser = null;
-      }
-    });
-  }
+    userEmail: string;
 
-  getUser() {
-      return this.currentUser;
-  }
+    authUser: any;
 
-  logout() {
-    this.afAuth.auth.signOut();
-  }
+    constructor(private router: Router) {
+        firebase.initializeApp({
+            apiKey: 'AIzaSyB27Mt_ANgN-VWTAP1fLbDY70UfNesFWto',
+            authDomain: 'king-of-the-sports.firebaseapp.com',
+            databaseURL: 'https://king-of-the-sports.firebaseio.com',
+            projectId: 'king-of-the-sports',
+            storageBucket: 'king-of-the-sports.appspot.com',
+            messagingSenderId: '724985830867'
+        });
+    }     
+
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        return this.verifyLogin(state.url);
+    }
+
+   verifyLogin(url: string): boolean {
+        if (this.isUserLoggedIn) { return true; }
+
+        this.router.navigate(['/admin/login']);
+        return false;
+    }
+
+    register(email: string, password: string) {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .catch(function (error) {
+                alert(`${error.message} Please Try Again!`);
+            });
+    }
+
+    verifyUser() {
+        this.authUser = firebase.auth().currentUser;
+        if (this.authUser) {
+
+            alert(`Welcome ${this.authUser.email}`);
+            this.userEmail = this.authUser.email;
+            this.isUserLoggedIn = true;
+            this.router.navigate(['/admin']);
+        }
+    }
+
+    login(loginEmail: string, loginPassword: string) {
+        firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
+            .catch(function (error) {
+                alert(`${error.message} Unable to login. Try again!`);
+            });
+    }
+
+    logout() {
+        this.isUserLoggedIn = false;
+        firebase.auth().signOut().then(function () {
+            alert(`Logged Out!`);
+        }, function (error) {
+            alert(`${error.message} Unable to logout. Try again!`);
+        });
+    }
 }
