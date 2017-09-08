@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 import { ApiHelper } from './../helpers/apiHelper';
 
 @Injectable()
-
 export class TablesService {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());

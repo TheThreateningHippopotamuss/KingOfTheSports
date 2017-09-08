@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 import { ApiHelper } from './../helpers/apiHelper';
 
 @Injectable()
-
 export class PlayersServices {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());
