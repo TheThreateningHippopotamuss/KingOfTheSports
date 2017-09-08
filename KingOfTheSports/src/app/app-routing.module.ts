@@ -11,7 +11,7 @@ const routes: Routes = [
       {path: 'contact', component: ContactComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      { path: '**', redirectTo: 'home'},
+      { path: '**', redirectTo: 'home' },
 ];
 @NgModule({
       imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

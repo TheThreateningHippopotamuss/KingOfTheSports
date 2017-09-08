@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
@@ -11,6 +12,9 @@ import { RegisterComponent } from './register/register.component';
   declarations: [AuthComponent,
     LoginComponent,
     RegisterComponent
+],
+providers: [
+  AuthService,
 ]
 })
 export class AuthModule { }

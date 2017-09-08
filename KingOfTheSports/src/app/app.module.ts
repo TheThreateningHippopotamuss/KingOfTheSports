@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -43,7 +44,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
