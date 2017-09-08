@@ -10,11 +10,11 @@ import { AuthComponent } from './authComponent/auth.component';
 
 const AdminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '#/admin',
     component: AuthComponent,
     children: [
       { path: 'login', component: LoginComponent },
-      { path: 'signup', component: RegisterComponent },
+      { path: 'register', component: RegisterComponent },
       { path: '', component: AuthNavComponent, canActivate: [AuthService] },      
     ]
   }
@@ -28,12 +28,13 @@ const AdminRoutes: Routes = [
   ],
   exports: [
     RouterModule,
+    AuthNavComponent,
   ],
   declarations: [
+    AuthComponent,    
     LoginComponent,
     RegisterComponent,
     AuthNavComponent,
-    AuthComponent
 ],
 providers: [
   AuthService,

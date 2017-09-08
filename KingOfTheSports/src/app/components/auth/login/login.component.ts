@@ -21,6 +21,6 @@ export class LoginComponent {
   }
 
   signUp() {
-    this.router.navigate(['/admin/signup'])
+    this.router.navigate(['/admin/register'])
   }
 }
