@@ -13,7 +13,6 @@ export class PlayersServices {
 
     constructor(private http: Http) { }
 
-    // TODO need change any with Model for competitions
     get(id): Observable<any> {
         this.playersUrl = ApiHelper.playersUrls(id);
 

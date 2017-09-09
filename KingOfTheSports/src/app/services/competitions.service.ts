@@ -13,7 +13,6 @@ export class CompetitionsService {
 
     constructor(private http: Http) { }
 
-    // TODO need change any with Model for competitions
     getAll(): Observable<any> {
 
         return this.http.get(

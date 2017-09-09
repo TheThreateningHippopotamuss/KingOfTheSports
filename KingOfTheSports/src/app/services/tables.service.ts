@@ -13,7 +13,6 @@ export class TablesService {
 
     constructor(private http: Http) { }
 
-    // TODO need change any with Model for competitions
     get(id): Observable<any> {
         this.tablesUrl = ApiHelper.tableUrls(id);
 
