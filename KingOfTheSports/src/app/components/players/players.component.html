@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="players-title">Players</h2>
+
+    <app-loader [loading]="loading" class="text-center"></app-loader>
+
+    <table [hidden]="loading" class="table table-responsive table-bordered text-col">
+        <thead>
+            <tr>
+                <th class="text-col">Jersey number </th>
+                <th class="text-col">Name</th>
+                <th class="text-col">Position</th>
+                <th class="text-col">Nationality</th>
+                <th class="text-col">Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of listPlayers">
+                <td>{{player.jerseyNumber}}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.position}}</td>
+                <td>{{player.nationality}}</td>
+                <td>{{player.dateOfBirth}}</td>
+            </tr>
+    </table>
+</div>

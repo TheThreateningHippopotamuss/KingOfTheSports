@@ -1,3 +1,4 @@
+import { Player } from './../../../models/player';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -19,6 +20,6 @@ export class PlayersServices {
         return this.http.get(
             this.playersUrl,
             { headers: this.headers })
-            .map(r => r.json());
+            .map(r =><Player[]> r.json().players);
     }
 }

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class FixturesComponent implements OnInit {
   public fixtures: any;
-  public loading: boolean = false;
+  public loading: boolean;
 
   constructor(private fixturesService: FixturesServices) { }
 

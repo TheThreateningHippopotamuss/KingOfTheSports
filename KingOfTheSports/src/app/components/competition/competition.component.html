@@ -1,4 +1,53 @@
-<div *ngFor="let competition of list">
-    <a class="nav-link js-scroll-trigger" [routerLink]="['/competition', competition.id]">{{competition.caption}}</a> 
-</div>
+<div class="container">
+    <h2 class="legues-title text-center">Top Leagues</h2>
+
+    <app-loader [loading]="loading" class="text-center"></app-loader>
     
+    <div [hidden]="loading" class="row text-center">
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/english_premier_league.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/bundesliga.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/serie_a.png" alt="">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div [hidden]="loading" class="row text-center">
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/eredivisie.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/la_liga.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-md">
+                <img src="./../../../assets/championships/ligue_1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <table [hidden]="loading" class="table table-responsive">
+        <tbody *ngFor="let competition of competitions">
+            <tr class="league-row" [routerLink]="['/competition', competition.id]">
+                <td class="text-center centerText">{{competition.league}}</td>
+                <td class="legue-name text-center centerText">{{competition.caption}}</td>
+                <td class="text-center centerText">{{competition.year}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
