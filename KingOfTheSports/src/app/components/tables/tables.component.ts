@@ -22,7 +22,7 @@ export class TablesComponent implements OnInit {
   }
   static getID(link) {
     const regex = /\d+$/g;
-    let m = regex.exec(link);
+    const m = regex.exec(link);
     return m[0];
   }
 

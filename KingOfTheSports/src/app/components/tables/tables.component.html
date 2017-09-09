@@ -21,7 +21,7 @@
         <tbody>
             <tr *ngFor="let team of list" [routerLink]="['/team', team.teamId]">
                 <td>{{team.position}}</td>
-                <td><img src="{{team.crestURI}}" alt="img" class="logo" /></td>
+                <td><img class="img-responsive logo" [src]="team.crestURI" onError="this.src='./../../../assets/images/noImage.png'"/></td>
                 <td>{{team.teamName}}</td>
                 <td>{{team.playedGames}}</td>
                 <td>{{team.wins}}</td>

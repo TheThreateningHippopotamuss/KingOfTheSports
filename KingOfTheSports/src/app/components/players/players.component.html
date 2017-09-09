@@ -1,22 +1,25 @@
-<div>
-    <table>
+<div class="container">
+    <h2 class="players-title">Players</h2>
+
+    <app-loader [loading]="loading" class="text-center"></app-loader>
+
+    <table [hidden]="loading" class="table table-responsive table-bordered text-col">
         <thead>
             <tr>
-                <th>Jersey number </th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Nationality</th>
-                <th>Date of Birth</th>
-             </tr>
+                <th class="text-col">Jersey number </th>
+                <th class="text-col">Name</th>
+                <th class="text-col">Position</th>
+                <th class="text-col">Nationality</th>
+                <th class="text-col">Date of Birth</th>
+            </tr>
         </thead>
-        <tbody>    
+        <tbody>
             <tr *ngFor="let player of listPlayers">
                 <td>{{player.jerseyNumber}}</td>
                 <td>{{player.name}}</td>
                 <td>{{player.position}}</td>
                 <td>{{player.nationality}}</td>
                 <td>{{player.dateOfBirth}}</td>
-              </tr>
-        </tbody>
+            </tr>
     </table>
 </div>

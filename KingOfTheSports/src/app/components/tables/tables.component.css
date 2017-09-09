@@ -28,3 +28,7 @@ tbody>tr:hover{
 td{
     vertical-align: middle;
 }
+
+.logo{
+    mix-blend-mode: multiply;
+}
