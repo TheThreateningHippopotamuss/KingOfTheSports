@@ -1,6 +1,9 @@
 <div class="container">
     <h2 class="legues-title text-center">Top Leagues</h2>
-    <div class="row text-center">
+
+    <app-loader [loading]="loading" class="text-center"></app-loader>
+    
+    <div [hidden]="loading" class="row text-center">
         <div class="col-md-4">
             <div class="well well-md">
                 <img src="./../../../assets/championships/english_premier_league.png" alt="">
@@ -19,7 +22,7 @@
     </div>
     <br>
     <br>
-    <div class="row text-center">
+    <div [hidden]="loading" class="row text-center">
         <div class="col-md-4">
             <div class="well well-md">
                 <img src="./../../../assets/championships/eredivisie.png" alt="">
@@ -38,12 +41,8 @@
     </div>
     <br>
     <br>
-
-    <app-loader [loading]="loading" class="text-center"></app-loader>
-
     <table [hidden]="loading" class="table table-responsive">
         <tbody *ngFor="let competition of competitions">
-
             <tr class="league-row" [routerLink]="['/competition', competition.id]">
                 <td class="text-center centerText">{{competition.league}}</td>
                 <td class="legue-name text-center centerText">{{competition.caption}}</td>

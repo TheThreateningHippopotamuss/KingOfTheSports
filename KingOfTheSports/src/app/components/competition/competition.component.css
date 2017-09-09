@@ -12,4 +12,7 @@ tr:hover{
     color: yellow;
 }
 
+td{
+    vertical-align: middle;
+}
 

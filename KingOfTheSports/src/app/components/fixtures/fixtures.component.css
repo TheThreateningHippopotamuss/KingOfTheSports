@@ -4,8 +4,8 @@
 }
 
 thead{
-    background-color: darkgray;
-    color: black;
+    background-color: #323131;
+    color: white;
     font-weight: bold;
 }
 
@@ -13,4 +13,8 @@ tbody>tr:hover{
     cursor: pointer;
     background-color: grey;
     color: yellow;
+}
+
+td{
+    vertical-align: middle;
 }

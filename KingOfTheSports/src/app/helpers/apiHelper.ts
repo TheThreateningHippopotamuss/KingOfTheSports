@@ -3,7 +3,7 @@ export class ApiHelper {
     static baseUrl = 'http://api.football-data.org/v1';
 
     static mainRoutes = {
-        competitions: <string>'/competitions?season=2017',
+        competitions: <string>'/competitions',
         fixtures: <string>'/fixtures',
         teams: <string>'/teams',
     };
@@ -16,7 +16,7 @@ export class ApiHelper {
     }
 
     static competitionUrls() {
-        return this.baseUrl + this.mainRoutes.competitions;
+        return this.baseUrl + this.mainRoutes.competitions + '?season=2017';
     }
 
     static fixturesUrl() {
