@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { ApiHelper } from './../helpers/apiHelper';
+import { ApiHelper } from './../../helpers/apiHelper';
 
 @Injectable()
 export class TablesService {
