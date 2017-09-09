@@ -39,6 +39,9 @@ export class AuthService implements CanActivate {
 
     register(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(() => {
+            this.verifyUser();
+        });
     }
 
     verifyUser() {
@@ -57,6 +60,9 @@ export class AuthService implements CanActivate {
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
             .catch(function (error) {
                 // alert(`${error.message} Unable to login. Try again!`);
+            })
+            .then(() => {
+                this.verifyUser();
             });
     }
 
