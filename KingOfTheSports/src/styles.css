@@ -273,11 +273,12 @@ ul.banner-social-buttons {
 }
 
 footer {
-    padding: 50px 0;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: 60px;
+    background-color: #000;
 }
 
 footer p {
