@@ -6,16 +6,13 @@ import 'rxjs/add/operator/map';
 import { ApiHelper } from './../helpers/apiHelper';
 
 @Injectable()
-
 export class CompetitionsService {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());
-    private competitionsUrl = ApiHelper.competitionUrls();
-    private teamFixturesUrl;
+    private competitionsUrl: string = ApiHelper.competitionUrls();
 
     constructor(private http: Http) { }
 
-    // TODO need change any with Model for competitions
     getAll(): Observable<any> {
 
         return this.http.get(
