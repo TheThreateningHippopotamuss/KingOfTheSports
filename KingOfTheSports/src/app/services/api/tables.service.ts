@@ -15,7 +15,7 @@ export class TablesService {
 
     constructor(private http: Http) { }
 
-    get(id): Observable<Team[]> {
+    get(id): Observable<any> {
         this.tablesUrl = ApiHelper.tableUrls(id);
 
         return this.http.get(

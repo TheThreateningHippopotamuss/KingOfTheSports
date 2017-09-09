@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Team } from './../../../models/team';
 import { Component, OnInit } from '@angular/core';
 import { TablesService } from './../../services/api/tables.service';
@@ -18,6 +19,11 @@ export class TablesComponent implements OnInit {
   constructor(private service:TablesService,private activatedRoute: ActivatedRoute) {
    
    }
+   static getID(link){
+    const regex = /\d+$/g;
+    let m = regex.exec(link);
+    return m[0];
+}
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
@@ -26,7 +32,12 @@ export class TablesComponent implements OnInit {
    
     this.service.get(this.id).subscribe(
       table=>{       
-        this.list=table;
+        
+        table.forEach(team=>{
+          team.teamId = +TablesComponent.getID(team._links.team.href);
+          this.list=table;
+      });
+       
       },(err)=>console.log(err)  
     );   
   })

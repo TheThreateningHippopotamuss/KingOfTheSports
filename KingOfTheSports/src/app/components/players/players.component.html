@@ -1,0 +1,22 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Jersey number </th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Nationality</th>
+                <th>Date of Birth</th>
+             </tr>
+        </thead>
+        <tbody>    
+            <tr *ngFor="let player of listPlayers">
+                <td>{{player.jerseyNumber}}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.position}}</td>
+                <td>{{player.nationality}}</td>
+                <td>{{player.dateOfBirth}}</td>
+              </tr>
+        </tbody>
+    </table>
+</div>
