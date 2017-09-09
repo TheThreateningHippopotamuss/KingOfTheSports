@@ -1,3 +1,4 @@
+import { FooterModule } from './components/footer/footer.module';
 import { TablesService } from './services/api/tables.service';
 import { PlayersServices } from './services/api/players.service';
 import { SharedModule } from './shared/shared.module';
@@ -12,7 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap';
-import{TablesComponent}from './components/tables/tables.component'
+import { TablesComponent } from './components/tables/tables.component';
 import { PlayersComponent } from './components/players/players.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,17 +23,16 @@ import { FormsModule } from '@angular/forms/';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    HomeComponent,
     CompetitionComponent,
     FixturesComponent,
     TablesComponent,
-    PlayersComponent
+    PlayersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +45,10 @@ import { NgModule } from "@angular/core";
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    SharedModule
+    SharedModule,
+    FooterModule
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices,TablesService,PlayersServices],
+  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
