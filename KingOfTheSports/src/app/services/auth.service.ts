@@ -56,7 +56,7 @@ export class AuthService implements CanActivate {
     login(loginEmail: string, loginPassword: string) {
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
             .catch(function (error) {
-                alert(`${error.message} Unable to login. Try again!`);
+                // alert(`${error.message} Unable to login. Try again!`);
             });
     }
 
