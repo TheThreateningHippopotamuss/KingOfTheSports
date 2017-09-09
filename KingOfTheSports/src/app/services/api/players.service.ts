@@ -3,20 +3,21 @@ import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { ApiHelper } from './../helpers/apiHelper';
+import { ApiHelper } from './../../helpers/apiHelper';
 
 @Injectable()
-export class CompetitionsService {
+export class PlayersServices {
 
     private headers: Headers = new Headers(ApiHelper.getHeaders());
-    private competitionsUrl: string = ApiHelper.competitionUrls();
+    private playersUrl: string;
 
     constructor(private http: Http) { }
 
-    getAll(): Observable<any> {
+    get(id): Observable<any> {
+        this.playersUrl = ApiHelper.playersUrls(id);
 
         return this.http.get(
-            this.competitionsUrl,
+            this.playersUrl,
             { headers: this.headers })
             .map(r => r.json());
     }

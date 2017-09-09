@@ -1,5 +1,5 @@
 import { AuthService } from './services/auth.service';
-import { CompetitionsService } from './services/competitions.service';
+import { CompetitionsService } from './services/api/competitions.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
