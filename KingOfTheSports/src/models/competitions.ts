@@ -5,5 +5,5 @@ export class Competition {
     year: Date;
     numberOfTeams: number;
     numberOfGames: number;
-    
+
 }

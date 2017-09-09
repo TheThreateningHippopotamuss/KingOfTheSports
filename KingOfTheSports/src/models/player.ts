@@ -7,5 +7,5 @@ export class Player {
     nationality: string;
     contractUntil: number;
     marketValue: number;
-    
+
 }
