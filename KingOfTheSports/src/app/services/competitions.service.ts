@@ -1,7 +1,9 @@
+import { Competition } from './../../models/competitions';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+
 
 import { ApiHelper } from './../helpers/apiHelper';
 
@@ -18,6 +20,7 @@ export class CompetitionsService {
         return this.http.get(
             this.competitionsUrl,
             { headers: this.headers })
-            .map(r => r.json());
+            .map(res  => <Competition[]>res.json())
+            ;
     }
 }

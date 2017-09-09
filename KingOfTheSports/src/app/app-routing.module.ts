@@ -1,3 +1,4 @@
+import { CompetitionComponent } from './components/competition/competition.component';
 import { AllFixturesComponent } from './components/allFixtures/allFixtures.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent},
       { path: 'allFixtures', component: AllFixturesComponent},
+      {path: 'competition',component:CompetitionComponent},
       { path: '**', redirectTo: 'home' },
 ];
 @NgModule({
