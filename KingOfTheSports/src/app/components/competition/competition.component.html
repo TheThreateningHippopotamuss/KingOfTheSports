@@ -1,3 +1,4 @@
 <div *ngFor="let competition of list">
-    <a class="nav-link js-scroll-trigger" href= "competition/{{competition.id}}">{{competition.caption}}</a> 
+    <a class="nav-link js-scroll-trigger" [routerLink]="['/competition', competition.id]">{{competition.caption}}</a> 
 </div>
+    

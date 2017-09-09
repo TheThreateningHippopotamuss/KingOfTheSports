@@ -1,0 +1,34 @@
+<div>
+    <table>
+            <thead >
+            <tr >
+                <th>Club</th>
+                <th>Position</th>
+                <th>Played games</th>
+                <th>Wins</th>
+                <th>Draws</th>
+                <th>Loses</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>Difference</th>
+                <th>Points</th>
+            </tr>
+            </thead>
+            <tbody>
+           
+                <tr *ngFor="let team of list">
+                    <td><img src="{{team.crestURI}}" alt="img" class="logo"/><a href="#/team/{{team.teamId}}">{{team.teamName}}</a></td>
+                    <td>{{team.position}}</td>
+                    <td>{{team.playedGames}}</td>
+                    <td>{{team.wins}}</td>
+                    <td>{{team.draws}}</td>
+                    <td>{{team.losses}}</td>
+                    <td>{{team.goals}}</td>
+                    <td>{{team.goalsAgainst}}</td>
+                    <td>{{team.goalDifference}}</td>
+                    <td>{{team.points}}</td>
+                </tr>
+           
+            </tbody>
+        </table>
+    </div>
