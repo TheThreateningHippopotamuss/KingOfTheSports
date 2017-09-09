@@ -1,6 +1,7 @@
 import { Competition } from './../../../models/competitions';
 import { CompetitionsService } from './../../services/api/competitions.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-competition',
@@ -10,20 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class CompetitionComponent implements OnInit {
   public competitions: Competition[];
   public loading: boolean;
-  
-  constructor(private service: CompetitionsService) { }
+
+  constructor(private service: CompetitionsService, public toastr: ToastsManager) { }
 
   ngOnInit() {
     this.loading = true;
+    this.toastr.success('In competition component!');
 
     this.service.getAll().subscribe(
       (c) => {
-      this.competitions = c;
-      this.loading = false;
-    }, (err) => {
-      this.loading = false;
-      console.log(err);
-    }
+        this.competitions = c;
+        this.loading = false;
+
+      }, (err) => {
+        this.loading = false;
+        console.log(err);
+      }
     );
   }
 }
