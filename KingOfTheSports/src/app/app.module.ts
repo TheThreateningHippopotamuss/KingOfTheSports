@@ -1,14 +1,15 @@
-import { AllFixturesComponent } from './components/allFixtures/allFixtures.component';
+import { SharedModule } from './shared/shared.module';
+import { FixturesServices } from './services/api/fixtures.service';
+import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { AuthService } from './services/auth.service';
 import { Http, HttpModule } from '@angular/http';
-import { CompetitionsService } from './services/competitions.service';
+import { CompetitionsService } from './services/api/competitions.service';
 import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AlertModule } from 'ngx-bootstrap';
 import { CompetitionComponent } from './components/competition/competition.component';
+import { AlertModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AppComponent,
     FooterComponent,
     HomeComponent,
-    AllFixturesComponent,
     CompetitionComponent
   ],
   imports: [
@@ -36,9 +36,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     HttpModule,
     AngularFireModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    SharedModule
   ],
-  providers: [AuthService, CompetitionsService],
+  providers: [AuthService, CompetitionsService, FixturesServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
