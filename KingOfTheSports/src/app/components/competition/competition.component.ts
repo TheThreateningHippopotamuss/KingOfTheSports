@@ -1,5 +1,5 @@
 import { Competition } from './../../../models/competitions';
-import { CompetitionsService } from './../../services/competitions.service';
+import { CompetitionsService } from './../../services/api/competitions.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

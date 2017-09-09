@@ -1,3 +1,4 @@
+import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -11,9 +12,9 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'fixtures', component: FixturesComponent },
+      {path: 'competition',component:CompetitionComponent},
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      {path: 'competition',component:CompetitionComponent},
       { path: '**', redirectTo: 'home' },
 ];
 

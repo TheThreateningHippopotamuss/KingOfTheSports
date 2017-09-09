@@ -1,3 +1,4 @@
+import { Competition } from './../../../models/competitions';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -13,11 +14,11 @@ export class CompetitionsService {
 
     constructor(private http: Http) { }
 
-    getAll(): Observable<any> {
+    getAll(): Observable<Competition[]> {
 
         return this.http.get(
             this.competitionsUrl,
             { headers: this.headers })
-            .map(r => r.json());
+            .map(r => <Competition[]>r.json());
     }
 }
