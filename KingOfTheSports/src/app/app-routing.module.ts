@@ -1,4 +1,3 @@
-import { AuthComponent } from './components/auth/authComponent/auth.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -12,13 +11,11 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent},
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent},
-      // {path: 'admin/login', component: LoginComponent},
-      // {path: 'admin/register', component: RegisterComponent},
       { path: '**', redirectTo: 'home' },
 ];
 @NgModule({
       imports: [RouterModule.forRoot(
-            routes, 
+            routes,
             {useHash: true})],
       exports: [RouterModule]
     })
