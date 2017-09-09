@@ -14,7 +14,7 @@ export class RegisterComponent {
 
   passwordConfirm: string;
 
-  passwordFail: boolean = false;
+  passwordFail = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -27,6 +27,4 @@ export class RegisterComponent {
       this.authService.verifyUser();
     }
   }
-
-  
 }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   email: string;
-  
+
   password: string;
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -21,6 +21,6 @@ export class LoginComponent {
   }
 
   signUp() {
-    this.router.navigate(['/admin/register'])
+    this.router.navigate(['/register']);
   }
 }
