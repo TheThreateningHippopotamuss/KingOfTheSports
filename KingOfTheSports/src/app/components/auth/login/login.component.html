@@ -6,15 +6,9 @@
                 <h3 style="margin-bottom: 25px; text-align: center;">Log In</h3>
                 <div class="form-group">
                     <input type="email" class="form-control" id="email" name="email" placeholder="email" required [(ngModel)]="email" #em="ngModel">
-                    <div [hidden]="em.valid || em.pristine" class="alert callout">
-                        Email is required
-                    </div>
                 </div>
                 <div class="form-group">
                     <input [(ngModel)]="password" name="password" required #pwd1="ngModel" type="password" class="form-control" id="password" name="password" placeholder="password" required>
-                </div>
-                <div [hidden]="em.valid || em.pristine" class="alert callout">
-                    Email is required
                 </div>
                 <input type="submit" id="submit" name="submit" class="btn btn-primary pull-right" value="Log In" (click)="logIn()">
                 <button class="btn btn-primary pull-left" (click)="signUp()">No account? Register!</button>

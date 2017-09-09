@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import * as firebase from 'firebase/app';
 import {
     CanActivate,
     Router,
     ActivatedRouteSnapshot,
     RouterStateSnapshot } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Injectable()
 export class AuthService implements CanActivate {
@@ -15,7 +16,9 @@ export class AuthService implements CanActivate {
 
     authUser: any;
 
-    constructor(private router: Router) {
+    toastr: ToastsManager;
+
+    constructor(private router: Router, public t: ToastsManager) {
         firebase.initializeApp({
             apiKey: 'AIzaSyB27Mt_ANgN-VWTAP1fLbDY70UfNesFWto',
             authDomain: 'king-of-the-sports.firebaseapp.com',
@@ -24,8 +27,9 @@ export class AuthService implements CanActivate {
             storageBucket: 'king-of-the-sports.appspot.com',
             messagingSenderId: '724985830867'
         });
-    }
 
+        this.toastr = t;
+    }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         return this.verifyLogin(state.url);
     }
@@ -40,18 +44,17 @@ export class AuthService implements CanActivate {
     register(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(function (error) {
-                alert(`${error.message} Please Try Again!`);
+                this.toastr.error(`${error.message} Please Try Again!`);
             });
     }
 
     verifyUser() {
         this.authUser = firebase.auth().currentUser;
         if (this.authUser) {
-            alert(`Welcome ${this.authUser.email}`);
             this.userEmail = this.authUser.email;
             localStorage.setItem('email', this.authUser.email);
             this.isUserLoggedIn = true;
-            this.router.navigate(['/admin']);
+            this.router.navigate(['']);
             window.location.reload();
         }
     }
@@ -59,7 +62,7 @@ export class AuthService implements CanActivate {
     login(loginEmail: string, loginPassword: string) {
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
             .catch(function (error) {
-                alert(`${error.message} Unable to login. Try again!`);
+                this.toastr.error(`${error.message} Unable to login. Try again!`);
             });
     }
 
@@ -67,10 +70,12 @@ export class AuthService implements CanActivate {
         this.isUserLoggedIn = false;
         firebase.auth().signOut().then(function () {
             localStorage.removeItem('email');
-            alert(`Logged Out!`);
-            window.location.reload();
+            this.toastr.info('Logging you out. Please wait!');
         }, function (error) {
-            alert(`${error.message} Unable to logout. Try again!`);
+            this.toastr.error('There was an error with logging you out!');
         });
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
     }
 }

@@ -1,3 +1,5 @@
+import { ToastOptions } from 'ng2-toastr/src/toast-options';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { SharedModule } from './shared/shared.module';
 import { FixturesServices } from './services/api/fixtures.service';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
@@ -10,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap';
-import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms/';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +43,10 @@ import { NgModule } from "@angular/core";
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices],
+  providers: [AuthService, CompetitionsService, FixturesServices, ToastsManager, ToastOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
