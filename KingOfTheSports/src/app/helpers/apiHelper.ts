@@ -4,6 +4,7 @@ export class ApiHelper {
 
     static mainRoutes = {
         competitions: <string>'/competitions',
+        fixtures: <string>'/fixtures',
         teams: <string>'/teams',
     };
 
@@ -16,6 +17,10 @@ export class ApiHelper {
 
     static competitionUrls() {
         return this.baseUrl + this.mainRoutes.competitions;
+    }
+
+    static fixturesUrl() {
+        return this.baseUrl + this.mainRoutes.fixtures;
     }
 
     static tableUrls(id: number) {
