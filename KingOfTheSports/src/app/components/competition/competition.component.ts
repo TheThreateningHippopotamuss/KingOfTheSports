@@ -7,18 +7,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './competition.component.html',
   styleUrls: ['./competition.component.css']
 })
-  export class CompetitionComponent implements OnInit {
-    
-   public list:Competition[];
-
-  constructor(private service:CompetitionsService) { }
+export class CompetitionComponent implements OnInit {
+  public competitions: Competition[];
+  public loading: boolean;
+  
+  constructor(private service: CompetitionsService) { }
 
   ngOnInit() {
-   this.service.getAll().subscribe(
-     competetions=>{       
-       this.list=competetions;
-     },(err)=>console.log(err)
-   )   
-  }
+    this.loading = true;
 
+    this.service.getAll().subscribe(
+      (c) => {
+      this.competitions = c;
+      this.loading = false;
+    }, (err) => {
+      this.loading = false;
+      console.log(err);
+    }
+    );
+  }
 }

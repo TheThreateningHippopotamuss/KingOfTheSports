@@ -1,0 +1,18 @@
+img{
+    width: 40%;
+}
+
+.legues-title {
+color: yellow;
+}
+
+tr:hover{
+    cursor: pointer;
+    background-color: grey;
+    color: yellow;
+}
+
+td{
+    vertical-align: middle;
+}
+

@@ -1,4 +1,3 @@
-.animationWrapper{
-    margin-left: calc(55% - 75px);
-    position: relative;
+.loading-bar {
+   padding-top: 120px;
 }

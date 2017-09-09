@@ -16,7 +16,7 @@ export class ApiHelper {
     }
 
     static competitionUrls() {
-        return this.baseUrl + this.mainRoutes.competitions;
+        return this.baseUrl + this.mainRoutes.competitions + '?season=2017';
     }
 
     static fixturesUrl() {
