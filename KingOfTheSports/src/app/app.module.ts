@@ -1,4 +1,6 @@
 import { AuthService } from './services/auth.service';
+import { Http, HttpModule } from '@angular/http';
+import { CompetitionsService } from './services/competitions.service';
 import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -35,7 +37,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, CompetitionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
