@@ -8,15 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FixturesComponent implements OnInit {
-  private fixtures: any;
+  public fixtures: any;
+  public loading: boolean = false;
 
   constructor(private fixturesService: FixturesServices) { }
 
   ngOnInit() {
+    this.loading = true;
+
     this.fixturesService.get()
-      .subscribe(f => {
+      .subscribe((f) => {
         this.fixtures = f.fixtures;
-      });
+        this.loading = false;
+      },
+      () => this.loading = false);
   }
 
 }
