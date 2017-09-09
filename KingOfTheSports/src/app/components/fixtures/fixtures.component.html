@@ -1,9 +1,9 @@
 <div class="container">
   <h2>Upcoming Fixtures</h2>
 
-    <app-loader [loading]="loading" class="text-center"></app-loader>
-  
-  <table [hidden]="loading" class="table table-hover">
+  <app-loader [loading]="loading" class="text-center"></app-loader>
+
+  <table [hidden]="loading" class="table table-responsive">
     <thead>
       <tr>
         <th class="text-center">Date</th>
@@ -12,8 +12,6 @@
         <th class="text-center">Away Team</th>
       </tr>
     </thead>
-
-
     <tbody *ngFor="let singleFixture of fixtures">
       <tr>
         <td class="text-center centerText">{{singleFixture.date | date: 'medium'}}</td>
