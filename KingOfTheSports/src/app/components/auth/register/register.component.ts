@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../../services/auth.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+  email: string;
 
-  constructor() { }
+  password: string;
 
-  ngOnInit() {
+  passwordConfirm: string;
+
+  passwordFail: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  signUp() {
+    if (this.password !== this.passwordConfirm) {
+      this.passwordFail = true;
+    } else {
+      this.passwordFail = false;
+      this.authService.register(this.email, this.password);
+      this.authService.verifyUser();
+    }
   }
 
+  
 }

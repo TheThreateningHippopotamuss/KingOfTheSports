@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Http, HttpModule } from '@angular/http';
 import { CompetitionsService } from './services/competitions.service';
 import { ContactModule } from './components/contact/contact.module';
@@ -11,13 +12,17 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './components/auth/auth.module';
+import { FormsModule } from '@angular/forms/';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,9 +30,13 @@ import { AuthModule } from './components/auth/auth.module';
     AlertModule.forRoot(),
     AuthModule,
     ContactModule,
-    HttpModule
+    FormsModule,
+    HttpModule,
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [CompetitionsService],
+  providers: [AuthService, CompetitionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
