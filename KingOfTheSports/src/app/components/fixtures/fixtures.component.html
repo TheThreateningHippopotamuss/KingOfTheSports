@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Upcoming Fixtures</h2>
+  <h2 class="fixtures-title">Upcoming Fixtures</h2>
 
   <app-loader [loading]="loading" class="text-center"></app-loader>
 
@@ -15,9 +15,9 @@
     <tbody *ngFor="let singleFixture of fixtures">
       <tr>
         <td class="text-center centerText">{{singleFixture.date | date: 'medium'}}</td>
-        <td class="text-center centerText">{{singleFixture.homeTeamName}}</td>
-        <td class="text-center centerText ">-</td>
-        <td class="text-center centerText">{{singleFixture.awayTeamName}}</td>
+        <td class="text-center centerText team-name">{{singleFixture.homeTeamName}}</td>
+        <td class="text-center centerText">-</td>
+        <td class="text-center centerText team-name">{{singleFixture.awayTeamName}}</td>
       </tr>
     </tbody>
   </table>

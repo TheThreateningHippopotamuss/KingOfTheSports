@@ -1,0 +1,16 @@
+.fixtures-title{
+    color: yellow;
+    text-align: center;
+}
+
+thead{
+    background-color: darkgray;
+    color: black;
+    font-weight: bold;
+}
+
+tbody>tr:hover{
+    cursor: pointer;
+    background-color: grey;
+    color: yellow;
+}
