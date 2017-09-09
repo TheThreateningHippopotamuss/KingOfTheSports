@@ -15,8 +15,6 @@ export class AuthNavComponent implements OnInit {
 
   ngOnInit() {
     this.theUser = localStorage.getItem('email');
-    console.log(this.theUser);
-    console.log(this.authService);
   }
 
   logOut() {

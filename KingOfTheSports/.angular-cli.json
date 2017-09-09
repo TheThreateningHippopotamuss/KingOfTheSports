@@ -8,7 +8,7 @@
         "outDir": "dist",
         "assets": [
             "assets",
-            "favicon.ico" 
+            "favicon.ico"
         ],
         "index": "index.html",
         "main": "main.ts",
@@ -19,9 +19,13 @@
         "prefix": "app",
         "styles": [
             "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-            "styles.css"
+            "styles.css",
+            "../node_modules/toastr/build/toastr.min.css"
         ],
-        "scripts": [],
+        "scripts": [
+            "../node_modules/jquery/dist/jquery.min.js",
+            "../node_modules/toastr/build/toastr.min.js"
+        ],
         "environmentSource": "environments/environment.ts",
         "environments": {
             "dev": "environments/environment.ts",

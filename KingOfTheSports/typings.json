@@ -1,6 +1,8 @@
 {
   "globalDependencies": {
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160726204056",
-    "firebase": "registry:dt/firebase#2.4.1+20160510002910"
+    "firebase": "registry:dt/firebase#2.4.1+20160510002910",
+    "jquery": "registry:dt/jquery#1.10.0+20170310222111",
+    "popper.js": "registry:dt/popper.js#0.4.0+20161005184000"
   }
 }
