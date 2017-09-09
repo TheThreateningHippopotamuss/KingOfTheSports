@@ -1,5 +1,7 @@
 import { ToastOptions } from 'ng2-toastr/src/toast-options';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { TablesService } from './services/api/tables.service';
+import { PlayersServices } from './services/api/players.service';
 import { SharedModule } from './shared/shared.module';
 import { FixturesServices } from './services/api/fixtures.service';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
@@ -13,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{TablesComponent}from './components/tables/tables.component'
+import { PlayersComponent } from './components/players/players.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +34,9 @@ import { NgModule } from '@angular/core';
     FooterComponent,
     HomeComponent,
     CompetitionComponent,
-    FixturesComponent
+    FixturesComponent,
+    TablesComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,7 @@ import { NgModule } from '@angular/core';
     SharedModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices, ToastsManager, ToastOptions],
+  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices, ToastsManager, ToastOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

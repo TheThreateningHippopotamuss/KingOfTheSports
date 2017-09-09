@@ -1,3 +1,5 @@
+import { Table } from './../../../models/table';
+import { Team } from './../../../models/team';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -19,6 +21,6 @@ export class TablesService {
         return this.http.get(
             this.tablesUrl,
             { headers: this.headers })
-            .map(r => r.json());
+            .map(r => <Team[]> r.json().standing);
     }
 }
