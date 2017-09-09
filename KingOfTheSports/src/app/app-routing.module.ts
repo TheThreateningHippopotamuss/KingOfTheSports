@@ -1,3 +1,4 @@
+import { AllFixturesComponent } from './components/allFixtures/allFixtures.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent},
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent},
+      { path: 'allFixtures', component: AllFixturesComponent},
       { path: '**', redirectTo: 'home' },
 ];
 @NgModule({
