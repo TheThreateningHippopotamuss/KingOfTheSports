@@ -1,3 +1,4 @@
+import { TablesService } from './services/api/tables.service';
 import { SharedModule } from './shared/shared.module';
 import { FixturesServices } from './services/api/fixtures.service';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
@@ -10,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap';
+import{TablesComponent}from './components/tables/tables.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +28,8 @@ import { NgModule } from "@angular/core";
     FooterComponent,
     HomeComponent,
     CompetitionComponent,
-    FixturesComponent
+    FixturesComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { NgModule } from "@angular/core";
     AngularFireAuthModule,
     SharedModule
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices],
+  providers: [AuthService, CompetitionsService, FixturesServices,TablesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

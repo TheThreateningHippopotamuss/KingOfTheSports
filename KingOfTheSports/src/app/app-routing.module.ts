@@ -1,5 +1,6 @@
 import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { CompetitionComponent } from './components/competition/competition.component';
+import { TablesComponent } from './components/tables/tables.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'fixtures', component: FixturesComponent },
       {path: 'competition',component:CompetitionComponent},
+      {path: 'competition/:id',component:TablesComponent},
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: '**', redirectTo: 'home' },
