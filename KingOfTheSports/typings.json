@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160726204056",
-    "firebase": "registry:dt/firebase#2.4.1+20160510002910"
+    "firebase": "registry:dt/firebase#2.4.1+20160510002910",
+    "toastr": "registry:dt/toastr#2.1.3+20170305192644"
   }
 }
