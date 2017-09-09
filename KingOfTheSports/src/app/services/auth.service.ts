@@ -47,11 +47,12 @@ export class AuthService implements CanActivate {
     verifyUser() {
         this.authUser = firebase.auth().currentUser;
         if (this.authUser) {
-
             alert(`Welcome ${this.authUser.email}`);
             this.userEmail = this.authUser.email;
+            localStorage.setItem('email', this.authUser.email);
             this.isUserLoggedIn = true;
             this.router.navigate(['/admin']);
+            window.location.reload();
         }
     }
 
@@ -65,7 +66,9 @@ export class AuthService implements CanActivate {
     logout() {
         this.isUserLoggedIn = false;
         firebase.auth().signOut().then(function () {
+            localStorage.removeItem('email');
             alert(`Logged Out!`);
+            window.location.reload();
         }, function (error) {
             alert(`${error.message} Unable to logout. Try again!`);
         });
