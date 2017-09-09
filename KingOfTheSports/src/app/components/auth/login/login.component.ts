@@ -17,7 +17,6 @@ export class LoginComponent {
 
   logIn() {
     this.authService.login(this.email, this.password);
-    this.authService.verifyUser();
   }
 
   signUp() {

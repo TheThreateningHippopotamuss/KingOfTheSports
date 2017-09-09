@@ -1,24 +1,24 @@
-<div class="container">
-  <h2 class="fixtures-title">Upcoming Fixtures</h2>
+<div class="container move-up">
+    <h2 class="fixtures-title">Upcoming Fixtures</h2>
 
-  <app-loader [loading]="loading" class="text-center"></app-loader>
+    <app-loader [loading]="loading" class="text-center"></app-loader>
 
-  <table [hidden]="loading" class="table table-responsive">
-    <thead>
-      <tr>
-        <th class="text-center">Date</th>
-        <th class="text-center">Home Team</th>
-        <th class="text-center">vs.</th>
-        <th class="text-center">Away Team</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let singleFixture of fixtures">
-      <tr>
-        <td class="text-center centerText">{{singleFixture.date | date: 'medium'}}</td>
-        <td class="text-center centerText team-name">{{singleFixture.homeTeamName}}</td>
-        <td class="text-center centerText">-</td>
-        <td class="text-center centerText team-name">{{singleFixture.awayTeamName}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table [hidden]="loading" class="table table-responsive">
+        <thead>
+            <tr>
+                <th class="text-center">Date</th>
+                <th class="text-center">Home Team</th>
+                <th class="text-center">vs.</th>
+                <th class="text-center">Away Team</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let singleFixture of fixtures">
+            <tr>
+                <td class="text-center centerText">{{singleFixture.date | date: 'medium'}}</td>
+                <td class="text-center centerText team-name">{{singleFixture.homeTeamName}}</td>
+                <td class="text-center centerText">-</td>
+                <td class="text-center centerText team-name">{{singleFixture.awayTeamName}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

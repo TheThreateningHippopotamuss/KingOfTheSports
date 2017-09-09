@@ -6,12 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent implements OnInit {
-  @Input() loading: boolean = false;
+  @Input() loading = false;
 
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }

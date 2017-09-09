@@ -16,6 +16,9 @@ import { AlertModule } from 'ngx-bootstrap';
 import { TablesComponent } from './components/tables/tables.component';
 import { PlayersComponent } from './components/players/players.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './components/auth/auth.module';
@@ -46,7 +49,9 @@ import { NgModule } from '@angular/core';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     SharedModule,
-    FooterModule
+    FooterModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
   ],
   providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices],
   bootstrap: [AppComponent]
