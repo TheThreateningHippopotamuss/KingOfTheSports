@@ -20,6 +20,7 @@ import { AuthNavComponent } from './authNav/authNav.component';
     LoginComponent,
     RegisterComponent,
     AuthNavComponent,
+ 
 ],
 providers: [
   AuthService,

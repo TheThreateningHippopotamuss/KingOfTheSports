@@ -2,6 +2,7 @@ export class Team {
     position: number;    
     teamName: string;
     crestURI: string;
+    teamId: number;
     playedGames: number;    
     wins: number;
     draws: number;
@@ -10,6 +11,7 @@ export class Team {
     goalsAgainst: number;
     goalDifference: number;   
     points: number;
-    teamId: number;
+    _links:object
+    
     
 }
