@@ -25,4 +25,5 @@ providers: [
   AuthService,
 ]
 })
+
 export class AuthModule { }
