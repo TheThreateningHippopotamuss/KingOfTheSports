@@ -1,11 +1,13 @@
-import { FixturesServices } from './../../services/api/fixtures.service';
 import { Component, OnInit } from '@angular/core';
+
+import { FixturesServices } from './../../services/api/fixtures.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-fixtures',
   templateUrl: './fixtures.component.html',
-  styleUrls: ['./fixtures.component.css']
+  styleUrls: ['./fixtures.component.css'],
+  providers: [FixturesServices]
 })
 
 export class FixturesComponent implements OnInit {

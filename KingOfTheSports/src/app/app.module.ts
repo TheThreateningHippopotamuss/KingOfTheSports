@@ -24,13 +24,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgModule } from '@angular/core';
 
 import { CompetitionsModule } from './components/competitions/competitions.module';
-import {CoreModule} from './core/core.module'
+import { CoreModule } from './core/core.module'
 
 
 @NgModule({
   declarations: [
-    AppComponent,   
-    FixturesComponent,    
+    AppComponent,
+    FixturesComponent,
     HomeComponent,
     ContactComponent
   ],
@@ -39,7 +39,7 @@ import {CoreModule} from './core/core.module'
     AppRoutingModule,
     AlertModule.forRoot(),
     AuthModule,
-   
+
     FormsModule,
     HttpModule,
     AngularFireModule,
