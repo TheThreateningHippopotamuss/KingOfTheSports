@@ -59,7 +59,8 @@ import { NgModule } from '@angular/core';
     FixturesServices,
     TablesService,
     PlayersServices,
-    AuthGuard],
+    AuthGuard,
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

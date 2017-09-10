@@ -19,8 +19,8 @@ const routes: Routes = [
       { path: 'competition', component: CompetitionComponent, canActivate: [AuthGuard]},
       { path: 'competition/:id', component: TablesComponent, canActivate: [AuthGuard] },
       { path: 'team/:id', component: PlayersComponent, canActivate: [AuthGuard] },
-      { path: 'login', component: LoginComponent, canDeactivate: [AuthGuard] },
-      { path: 'register', component: RegisterComponent, canDeactivate: [AuthGuard] },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
       { path: '**', redirectTo: 'home' },
 ];
 
