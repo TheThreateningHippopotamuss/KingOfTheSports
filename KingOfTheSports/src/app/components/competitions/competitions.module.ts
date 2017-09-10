@@ -1,6 +1,5 @@
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { CompetitionsRoutingModule } from './competitions-routing.module';
 import { CompetitionComponent } from './competition/competition.component';

@@ -5,17 +5,21 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import { NgModule } from '@angular/core';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+
 
 const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
+
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'fixtures', component: FixturesComponent },
+      
       { path: 'competition', loadChildren:'./components/competitions/competitions.module#CompetitionsModule'},    
      
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: '**', redirectTo: 'home' },
+      { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
