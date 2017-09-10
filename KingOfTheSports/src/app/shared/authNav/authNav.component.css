@@ -1,3 +1,7 @@
 .navigation{
     margin-bottom: 30px;
 }
+
+.logout:hover{
+    cursor: pointer;
+}
