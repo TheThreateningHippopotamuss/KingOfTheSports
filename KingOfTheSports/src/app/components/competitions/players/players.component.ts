@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { PlayersServices } from './../../services/api/players.service';
-import { Player } from './../../../models/player';
+import { PlayersServices } from './../../../services/api/players.service';
+import { Player } from './../../../../models/player';
 
 @Component({
   selector: 'app-players',
