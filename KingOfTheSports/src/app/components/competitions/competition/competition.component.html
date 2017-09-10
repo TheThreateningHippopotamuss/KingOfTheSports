@@ -43,7 +43,7 @@
     <br>
     <h2 class="legues-title text-center">All Leagues</h2>
     <table [hidden]="loading" class="table table-responsive">
-        <tbody *ngFor="let competition of competitions">
+        <tbody *ngFor="let competition of competitions | filterLeagues: competitions">
             <tr class="league-row" [routerLink]="['/competition', competition.id]">
                 <td class="text-center centerText">{{competition.league}}</td>
                 <td class="legue-name text-center centerText">{{competition.caption}}</td>

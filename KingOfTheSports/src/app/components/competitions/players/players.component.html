@@ -19,7 +19,7 @@
             </tr>
         </tbody>
         <tbody>
-            <tr *ngFor="let player of listPlayers">
+            <tr *ngFor="let player of listPlayers | sortPlayersByNumber: listPlayers">
                 <td>{{player.jerseyNumber}}</td>
                 <td>{{player.name}}</td>
                 <td>{{player.position}}</td>
