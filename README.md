@@ -17,6 +17,9 @@ The **public part** of your projects should be **visible without authentication*
 
 **Registered users** should have personal area in the web application accessible after **successful login**. This area could hold for example the user's profiles management functionality or the user's posts in a blog system.
 
+## Documentation
+### [Moved to outer source](https://cdn.rawgit.com/TheThreateningHippopotamuss/KingOfTheSports/6a8c03a1/KingOfTheSports/kingofthedocs/index.html)
+
 ## Technical Requirements
 
 Your Web application should include the following:
