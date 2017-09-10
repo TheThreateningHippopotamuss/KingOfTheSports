@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import {
-    CanActivate,
     Router,
     ActivatedRouteSnapshot,
     RouterStateSnapshot
 } from '@angular/router';
 
 @Injectable()
-export class AuthService implements CanActivate {
+export class AuthService {
 
     isUserLoggedIn = false;
 
@@ -28,10 +27,6 @@ export class AuthService implements CanActivate {
         });
     }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        return this.verifyLogin(state.url);
-    }
-
     verifyLogin(url: string): boolean {
         if (this.isUserLoggedIn) {
             return true;
@@ -43,10 +38,6 @@ export class AuthService implements CanActivate {
 
     register(email: string, password: string) {
         return firebase.auth().createUserWithEmailAndPassword(email, password);
-    }
-
-    get authenticated(): boolean {
-        return this.isUserLoggedIn;
     }
 
     verifyUser() {

@@ -11,7 +11,7 @@ import { AuthService } from './../services/auth.service';
 import { CompetitionsService } from './../services/api/competitions.service';
 
 @NgModule({
-  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices, AuthGuard]
+  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices, AuthGuard, UnauthGuard]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parent: CoreModule) {

@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
-    if (this.auth.authenticated) {
+    if (localStorage.getItem('email')) {
       return true;
     }
     alert('You must be logged in to do that!');

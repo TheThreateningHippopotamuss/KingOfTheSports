@@ -12,10 +12,10 @@ export class UnauthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
-    if (this.auth.authenticated) {
-      return false;
+    if (!localStorage.getItem('email')) {
+      return true;
     }
     alert('You are already logged in!');
-    return true;
+    return false;
   }
 }
