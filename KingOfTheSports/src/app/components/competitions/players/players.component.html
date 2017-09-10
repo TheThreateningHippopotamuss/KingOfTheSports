@@ -1,5 +1,5 @@
 <div class="container move-up">
-    <h2 class="players-title">Players</h2>
+    <h2 appStyleTableTitles>Players</h2>
     <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
     <app-loader [loading]="loading" class="text-center"></app-loader>
 
@@ -19,7 +19,7 @@
             </tr>
         </tbody>
         <tbody>
-            <tr *ngFor="let player of listPlayers">
+            <tr appHoverTableRow *ngFor="let player of listPlayers | sortPlayersByNumber: listPlayers">
                 <td>{{player.jerseyNumber}}</td>
                 <td>{{player.name}}</td>
                 <td>{{player.position}}</td>
