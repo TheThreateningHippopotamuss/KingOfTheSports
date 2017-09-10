@@ -954,13 +954,7 @@ export class LoginComponent {
   }
 
   signUp() {
-    this.router.navigate([&#x27;/register&#x27;])
-      .then(() &#x3D;&gt; {
-        this.authService.verifyUser();
-        this.toastr.success(&#x27;Successfully registered!&#x27;);
-      }, (err) &#x3D;&gt; {
-        this.toastr.error(&#x27;This email is already used!&#x27;);
-      });
+    this.router.navigate([&#x27;/register&#x27;]);
   }
 }
 </code></pre>

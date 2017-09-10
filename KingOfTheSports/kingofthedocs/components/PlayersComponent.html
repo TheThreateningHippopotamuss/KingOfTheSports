@@ -1083,7 +1083,7 @@ export class PlayersComponent implements OnInit {
 
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container move-up&quot;&gt;
-    &lt;h2 class&#x3D;&quot;players-title&quot;&gt;Players&lt;/h2&gt;
+    &lt;h2 appStyleTableTitles&gt;Players&lt;/h2&gt;
     &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;goBack()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt; BACK&lt;/button&gt;
     &lt;app-loader [loading]&#x3D;&quot;loading&quot; class&#x3D;&quot;text-center&quot;&gt;&lt;/app-loader&gt;
 
@@ -1103,7 +1103,7 @@ export class PlayersComponent implements OnInit {
             &lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;tbody&gt;
-            &lt;tr *ngFor&#x3D;&quot;let player of listPlayers&quot;&gt;
+            &lt;tr appHoverTableRow *ngFor&#x3D;&quot;let player of listPlayers | sortPlayersByNumber: listPlayers&quot;&gt;
                 &lt;td&gt;{{player.jerseyNumber}}&lt;/td&gt;
                 &lt;td&gt;{{player.name}}&lt;/td&gt;
                 &lt;td&gt;{{player.position}}&lt;/td&gt;
@@ -1139,7 +1139,7 @@ export class PlayersComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container move-up">    <h2 class="players-title">Players</h2>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>    <app-loader [loading]="loading" class="text-center"></app-loader>    <table [hidden]="loading" class="table table-responsive table-bordered text-col">        <thead>            <tr>                <th class="text-col">Jersey number </th>                <th class="text-col">Name</th>                <th class="text-col">Position</th>                <th class="text-col">Nationality</th>                <th class="text-col">Date of Birth</th>            </tr>        </thead>        <tbody *ngIf="!hasPlayers">            <tr>                <td class="text-col" colspan="5">Sorry! No data found</td>            </tr>        </tbody>        <tbody>            <tr *ngFor="let player of listPlayers">                <td>{{player.jerseyNumber}}</td>                <td>{{player.name}}</td>                <td>{{player.position}}</td>                <td>{{player.nationality}}</td>                <td>{{player.dateOfBirth}}</td>            </tr>        </tbody>    </table>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container move-up">    <h2 appStyleTableTitles>Players</h2>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>    <app-loader [loading]="loading" class="text-center"></app-loader>    <table [hidden]="loading" class="table table-responsive table-bordered text-col">        <thead>            <tr>                <th class="text-col">Jersey number </th>                <th class="text-col">Name</th>                <th class="text-col">Position</th>                <th class="text-col">Nationality</th>                <th class="text-col">Date of Birth</th>            </tr>        </thead>        <tbody *ngIf="!hasPlayers">            <tr>                <td class="text-col" colspan="5">Sorry! No data found</td>            </tr>        </tbody>        <tbody>            <tr appHoverTableRow *ngFor="let player of listPlayers | sortPlayersByNumber: listPlayers">                <td>{{player.jerseyNumber}}</td>                <td>{{player.name}}</td>                <td>{{player.position}}</td>                <td>{{player.nationality}}</td>                <td>{{player.dateOfBirth}}</td>            </tr>        </tbody>    </table>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
     var DIRECTIVES = [{'name': 'HoverTableRowDirective', 'selector': '[appHoverTableRow]'},{'name': 'StyleTableTitlesDirective', 'selector': '[appStyleTableTitles]'}];
     var ACTUAL_COMPONENT = {'name': 'PlayersComponent'};
