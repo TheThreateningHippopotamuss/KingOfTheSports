@@ -1,3 +1,4 @@
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
@@ -13,13 +14,27 @@ export class LoginComponent {
 
   password: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, public toastr: ToastsManager) {
+  }
 
   logIn() {
-    this.authService.login(this.email, this.password);
+    this.authService.login(this.email, this.password)
+      .then(() => {
+        this.authService.verifyUser();
+        this.toastr.success('Successful logged in!');
+      },
+      (err) => {
+        this.toastr.error('Please check your email and password!');
+      });
   }
 
   signUp() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/register'])
+      .then(() => {
+        this.authService.verifyUser();
+        this.toastr.success('Successfully registered!');
+      }, (err) => {
+        this.toastr.error('This email is already used!');
+      });
   }
 }
