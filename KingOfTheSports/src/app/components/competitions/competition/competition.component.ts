@@ -1,5 +1,5 @@
-import { Competition } from './../../../models/competitions';
-import { CompetitionsService } from './../../services/api/competitions.service';
+import { Competition } from './../../../../models/competitions';
+import { CompetitionsService } from './../../../services/api/competitions.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
