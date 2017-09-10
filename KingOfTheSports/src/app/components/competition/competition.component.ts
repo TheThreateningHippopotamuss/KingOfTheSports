@@ -16,7 +16,6 @@ export class CompetitionComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.toastr.success('In competition component!');
 
     this.service.getAll().subscribe(
       (c) => {
@@ -25,7 +24,7 @@ export class CompetitionComponent implements OnInit {
 
       }, (err) => {
         this.loading = false;
-        console.log(err);
+        this.toastr.success('Please tye again!');
       }
     );
   }

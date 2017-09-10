@@ -1,3 +1,4 @@
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { Router } from '@angular/router';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,15 +12,20 @@ export class AuthNavComponent implements OnInit {
 
   theUser: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, public toastr: ToastsManager) { }
 
   ngOnInit() {
     this.theUser = localStorage.getItem('email');
   }
 
   logOut() {
-    // this.toastr.success('Successfully logged out!');
-    this.authService.logout();
+    this.authService.logout()
+      .then(() => {
+        localStorage.removeItem('email');
+        this.toastr.success('Successful logged out!');
+      }, (err) => {
+        this.toastr.error(`${err.message} Unable to logout. Try again!`);
+      });
     this.router.navigate(['']);
   }
 }
