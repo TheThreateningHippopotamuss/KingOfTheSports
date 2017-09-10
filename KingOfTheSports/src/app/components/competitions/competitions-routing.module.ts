@@ -14,7 +14,7 @@ import { NotFoundComponent } from './../../shared/not-found/not-found.component'
 const routes: Routes = [
   { path: '', redirectTo: 'competition', pathMatch: 'full' },
   { path: 'competition', component: CompetitionComponent },
-  { path: ':id', component: TablesComponent,canActivate: [TableGuardService]},
+  { path: ':id', component: TablesComponent, },
   { path: ':id/:id', component: PlayersComponent },
   { path: '**', component: NotFoundComponent },
 ];

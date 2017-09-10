@@ -81,13 +81,7 @@
                                     <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/ContactModule.html" >ContactModule</a>
-                                </li>
-                                <li class="link">
                                     <a href="../modules/CoreModule.html" >CoreModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/FooterModule.html" >FooterModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -132,6 +126,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/PlayersComponent.html"  data-type="entity-link" class="active" >PlayersComponent</a>
@@ -358,13 +355,7 @@
                                            <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/ContactModule.html" >ContactModule</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="../modules/CoreModule.html" >CoreModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/FooterModule.html" >FooterModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -409,6 +400,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/PlayersComponent.html"  data-type="entity-link" class="active" >PlayersComponent</a>
@@ -695,6 +689,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                 <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
                                  <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
@@ -778,6 +775,38 @@
             <h3 id="methods">
                 Methods
             </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="goBack"></a>
+                            <span class="name"><b> goBack</b><a href="#goBack"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>goBack()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/competitions/players/players.component.ts:50</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1044,6 +1073,10 @@ export class PlayersComponent implements OnInit {
       );
     });
   }
+
+  goBack() {
+    history.go(-1);
+  }
 }
 </code></pre>
     </div>
@@ -1051,7 +1084,7 @@ export class PlayersComponent implements OnInit {
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container move-up&quot;&gt;
     &lt;h2 class&#x3D;&quot;players-title&quot;&gt;Players&lt;/h2&gt;
-
+    &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;goBack()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt; BACK&lt;/button&gt;
     &lt;app-loader [loading]&#x3D;&quot;loading&quot; class&#x3D;&quot;text-center&quot;&gt;&lt;/app-loader&gt;
 
     &lt;table [hidden]&#x3D;&quot;loading&quot; class&#x3D;&quot;table table-responsive table-bordered text-col&quot;&gt;
@@ -1079,6 +1112,7 @@ export class PlayersComponent implements OnInit {
             &lt;/tr&gt;
         &lt;/tbody&gt;
     &lt;/table&gt;
+    &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;goBack()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt; BACK&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -1105,8 +1139,8 @@ export class PlayersComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container move-up">    <h2 class="players-title">Players</h2>    <app-loader [loading]="loading" class="text-center"></app-loader>    <table [hidden]="loading" class="table table-responsive table-bordered text-col">        <thead>            <tr>                <th class="text-col">Jersey number </th>                <th class="text-col">Name</th>                <th class="text-col">Position</th>                <th class="text-col">Nationality</th>                <th class="text-col">Date of Birth</th>            </tr>        </thead>        <tbody *ngIf="!hasPlayers">            <tr>                <td class="text-col" colspan="5">Sorry! No data found</td>            </tr>        </tbody>        <tbody>            <tr *ngFor="let player of listPlayers">                <td>{{player.jerseyNumber}}</td>                <td>{{player.name}}</td>                <td>{{player.position}}</td>                <td>{{player.nationality}}</td>                <td>{{player.dateOfBirth}}</td>            </tr>        </tbody>    </table></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container move-up">    <h2 class="players-title">Players</h2>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>    <app-loader [loading]="loading" class="text-center"></app-loader>    <table [hidden]="loading" class="table table-responsive table-bordered text-col">        <thead>            <tr>                <th class="text-col">Jersey number </th>                <th class="text-col">Name</th>                <th class="text-col">Position</th>                <th class="text-col">Nationality</th>                <th class="text-col">Date of Birth</th>            </tr>        </thead>        <tbody *ngIf="!hasPlayers">            <tr>                <td class="text-col" colspan="5">Sorry! No data found</td>            </tr>        </tbody>        <tbody>            <tr *ngFor="let player of listPlayers">                <td>{{player.jerseyNumber}}</td>                <td>{{player.name}}</td>                <td>{{player.position}}</td>                <td>{{player.nationality}}</td>                <td>{{player.dateOfBirth}}</td>            </tr>        </tbody>    </table>    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
     var DIRECTIVES = [{'name': 'HoverTableRowDirective', 'selector': '[appHoverTableRow]'},{'name': 'StyleTableTitlesDirective', 'selector': '[appStyleTableTitles]'}];
     var ACTUAL_COMPONENT = {'name': 'PlayersComponent'};
 </script>

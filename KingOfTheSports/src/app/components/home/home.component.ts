@@ -8,6 +8,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 export class HomeComponent implements OnInit {
 
+  theUser = localStorage.getItem('email');
   constructor(public toastr: ToastsManager) { }
 
   ngOnInit() {
