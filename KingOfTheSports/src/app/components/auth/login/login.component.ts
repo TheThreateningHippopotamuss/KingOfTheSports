@@ -29,12 +29,6 @@ export class LoginComponent {
   }
 
   signUp() {
-    this.router.navigate(['/register'])
-      .then(() => {
-        this.authService.verifyUser();
-        this.toastr.success('Successfully registered!');
-      }, (err) => {
-        this.toastr.error('This email is already used!');
-      });
+    this.router.navigate(['/register']);
   }
 }
