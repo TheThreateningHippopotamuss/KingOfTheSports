@@ -6,7 +6,7 @@
               Menu
               <i class="fa fa-bars"></i>
             </button>
-            <div *ngIf="!authService.isUserLoggedIn" class="collapse navbar-collapse" id="navbarResponsive">
+            <div *ngIf="!authService.isUserLoggedIn && !theUser" class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#/home">Home</a>
@@ -23,7 +23,7 @@
                     </li>
                 </ul>
             </div>
-            <div *ngIf="authService.isUserLoggedIn">
+            <div *ngIf="authService.isUserLoggedIn || theUser">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#/competition">Competition</a>
