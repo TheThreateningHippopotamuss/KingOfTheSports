@@ -10,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthNavComponent implements OnInit {
 
-  theUser: string;
+  theUser: any;
 
-  constructor(private authService: AuthService, private router: Router, public toastr: ToastsManager) { }
+  authService: AuthService;
+  constructor(authService: AuthService, private router: Router, public toastr: ToastsManager) {
+    this.authService = authService;
+   }
 
   ngOnInit() {
     this.theUser = localStorage.getItem('email');
