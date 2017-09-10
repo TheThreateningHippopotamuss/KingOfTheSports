@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import {
     CanActivate,
     Router,
@@ -17,7 +16,7 @@ export class AuthService implements CanActivate {
 
     authUser: any;
 
-    constructor(private router: Router, private toastr: ToastsManager) {
+    constructor(private router: Router) {
         firebase.initializeApp({
             apiKey: 'AIzaSyB27Mt_ANgN-VWTAP1fLbDY70UfNesFWto',
             authDomain: 'king-of-the-sports.firebaseapp.com',
@@ -26,8 +25,6 @@ export class AuthService implements CanActivate {
             storageBucket: 'king-of-the-sports.appspot.com',
             messagingSenderId: '724985830867'
         });
-
-        this.toastr.success('In auth service');
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -35,52 +32,34 @@ export class AuthService implements CanActivate {
     }
 
     verifyLogin(url: string): boolean {
-        if (this.isUserLoggedIn) { return true; }
+        if (this.isUserLoggedIn) {
+            return true;
+        }
 
-        this.router.navigate(['/admin/login']);
+        this.router.navigate(['/login']);
         return false;
     }
 
     register(email: string, password: string) {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                this.verifyUser();
-            });
+        return firebase.auth().createUserWithEmailAndPassword(email, password);
     }
 
     verifyUser() {
         this.authUser = firebase.auth().currentUser;
         if (this.authUser) {
-            // this.toastr.success(`Welcome ${this.authUser.email}`);
             this.userEmail = this.authUser.email;
             localStorage.setItem('email', this.authUser.email);
             this.isUserLoggedIn = true;
             this.router.navigate(['/competition']);
-            window.location.reload();
         }
     }
 
     login(loginEmail: string, loginPassword: string) {
-        firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
-            .catch(function (error) {
-                console.log('error login');
-                // this.toastr.error('Please check your email and password!');
-            })
-            .then(() => {
-                console.log('Successful logged');
-                // this.toastr.success('Successful logged in!');
-                this.verifyUser();
-            });
+        return firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword);
     }
 
     logout() {
         this.isUserLoggedIn = false;
-        firebase.auth().signOut().then(function () {
-            localStorage.removeItem('email');
-            // this.toastr.success('Successful logged out!');
-            window.location.reload();
-        }, function (error) {
-            // this.toastr.success(`${error.message} Unable to logout. Try again!`);
-        });
+        return firebase.auth().signOut();
     }
 }
