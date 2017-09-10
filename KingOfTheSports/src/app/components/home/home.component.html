@@ -5,10 +5,18 @@
                 <div class="col-lg-8 mx-auto">
                     <h1 class="brand-heading">KING OF THE SPORTS</h1>
                     <p class="intro-text">Fixtures, Schedules, Teams, Results, Statistics. <br> Become a part of our community. Join now!</p>
-                    <a href="#/login" class="btn btn-circle js-scroll-trigger">
-                        <i class="fa fa-sign-in animated"></i>
-                        <label>&nbsp;&nbsp;&nbsp;enter</label>
-                    </a>
+                    <div *ngIf="theUser">
+                        <a href="#/competition" class="btn btn-circle js-scroll-trigger">
+                            <i class="fa fa-sign-in animated"></i>
+                            <label>&nbsp;&nbsp;&nbsp;enter</label>
+                        </a>
+                    </div>
+                    <div *ngIf="!theUser">
+                        <a href="#/login" class="btn btn-circle js-scroll-trigger">
+                            <i class="fa fa-sign-in animated"></i>
+                            <label>&nbsp;&nbsp;&nbsp;enter</label>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

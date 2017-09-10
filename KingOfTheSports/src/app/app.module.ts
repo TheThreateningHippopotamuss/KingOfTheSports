@@ -1,10 +1,6 @@
-import { FooterModule } from './components/footer/footer.module';
-
 import { FixturesComponent } from './components/fixtures/fixtures.component';
-
-import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 import { Http, HttpModule } from '@angular/http';
@@ -26,29 +22,31 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgModule } from '@angular/core';
+
 import { CompetitionsModule } from './components/competitions/competitions.module';
-import {CoreModule} from './core/core.module';
+import { CoreModule } from './core/core.module'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FixturesComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AlertModule.forRoot(),
     AuthModule,
-    ContactModule,
+
     FormsModule,
     HttpModule,
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     SharedModule,
-    FooterModule,
+
     BrowserAnimationsModule,
     ToastModule.forRoot(),
 

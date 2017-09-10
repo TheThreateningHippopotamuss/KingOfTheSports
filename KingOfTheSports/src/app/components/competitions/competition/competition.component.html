@@ -1,22 +1,22 @@
 <div class="container move-up">
-    <h2 class="legues-title text-center">Top Leagues</h2>
+    <h2 appStyleTableTitles>Top Leagues</h2>
 
     <app-loader [loading]="loading" class="text-center"></app-loader>
 
     <div [hidden]="loading" class="row text-center">
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/english_premier_league.png" alt="">
+                <a href="/#/competition/445"><img src="./../../../assets/championships/english_premier_league.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/bundesliga.png" alt="">
+                <a href="/#/competition/452"><img src="./../../../assets/championships/bundesliga.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/serie_a.png" alt="">
+                <a href="/#/competition/456"><img src="./../../../assets/championships/serie_a.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
     </div>
@@ -25,25 +25,26 @@
     <div [hidden]="loading" class="row text-center">
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/eredivisie.png" alt="">
+                <a href="/#/competition/449"><img src="./../../../assets/championships/eredivisie.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/la_liga.png" alt="">
+                <a href="/#/competition/455"><img src="./../../../assets/championships/la_liga.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="well well-md">
-                <img src="./../../../assets/championships/ligue_1.png" alt="">
+                <a href="/#/competition/450"><img src="./../../../assets/championships/ligue_1.png" class="hover-enlarge" alt=""></a>
             </div>
         </div>
     </div>
     <br>
     <br>
+    <h2 class="legues-title text-center">All Leagues</h2>
     <table [hidden]="loading" class="table table-responsive">
-        <tbody *ngFor="let competition of competitions">
-            <tr class="league-row" [routerLink]="['/competition', competition.id]">
+        <tbody *ngFor="let competition of competitions | filterLeagues: competitions">
+            <tr appHoverTableRow class="league-row" [routerLink]="['/competition', competition.id]">
                 <td class="text-center centerText">{{competition.league}}</td>
                 <td class="legue-name text-center centerText">{{competition.caption}}</td>
                 <td class="text-center centerText">{{competition.year}}</td>

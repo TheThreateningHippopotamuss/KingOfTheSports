@@ -81,13 +81,7 @@
                                     <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/ContactModule.html" >ContactModule</a>
-                                </li>
-                                <li class="link">
                                     <a href="../modules/CoreModule.html" >CoreModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/FooterModule.html" >FooterModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -132,6 +126,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -358,13 +355,7 @@
                                            <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/ContactModule.html" >ContactModule</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="../modules/CoreModule.html" >CoreModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/FooterModule.html" >FooterModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -409,6 +400,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -800,7 +794,9 @@ export class LoaderComponent implements OnInit {
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loading-bar&quot;&gt;
     &lt;img src&#x3D;&quot;./../../../assets/images/loader.svg&quot; alt&#x3D;&quot;Loading data...&quot;&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;div style&#x3D;&quot;background:url(giphy.gif) no-repeat center center;width:32px;height:32px;&quot;&gt;&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade" id="tree">
@@ -826,8 +822,8 @@ export class LoaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="loading" class="loading-bar">    <img src="./../../../assets/images/loader.svg" alt="Loading data..."></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="loading" class="loading-bar">    <img src="./../../../assets/images/loader.svg" alt="Loading data..."></div><div style="background:url(giphy.gif) no-repeat center center;width:32px;height:32px;"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
     var DIRECTIVES = [{'name': 'HoverTableRowDirective', 'selector': '[appHoverTableRow]'},{'name': 'StyleTableTitlesDirective', 'selector': '[appStyleTableTitles]'}];
     var ACTUAL_COMPONENT = {'name': 'LoaderComponent'};
 </script>

@@ -81,13 +81,7 @@
                                     <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/ContactModule.html" >ContactModule</a>
-                                </li>
-                                <li class="link">
                                     <a href="../modules/CoreModule.html" >CoreModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/FooterModule.html" >FooterModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -132,6 +126,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/LoginComponent.html"  data-type="entity-link" class="active" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -358,13 +355,7 @@
                                            <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/ContactModule.html" >ContactModule</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="../modules/CoreModule.html" >CoreModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/FooterModule.html" >FooterModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -409,6 +400,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/LoginComponent.html"  data-type="entity-link" class="active" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -1023,7 +1017,7 @@ export class LoginComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container" id="auth-form">    <div class="row form-row">        <div class="form-area">            <form class="contact-form">                <br style="clear:both">                <h3 style="margin-bottom: 25px; text-align: center;">Log In</h3>                <div class="form-group">                    <input type="email" class="form-control" id="email" name="email" placeholder="email" required [(ngModel)]="email" #em="ngModel">                    <div [hidden]="em.valid || em.pristine" class="alert callout">                        Email is required                    </div>                </div>                <div class="form-group">                    <input [(ngModel)]="password" name="password" required #pwd1="ngModel" type="password" class="form-control" id="password" name="password" placeholder="password" required>                </div>                <div [hidden]="em.valid || em.pristine" class="alert callout">                    Email is required                </div>                <input type="submit" id="submit" name="submit" class="btn btn-primary pull-right" value="Log In" (click)="logIn()">                <button class="btn btn-primary pull-left" (click)="signUp()">No account? Register!</button>            </form>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
     var DIRECTIVES = [{'name': 'HoverTableRowDirective', 'selector': '[appHoverTableRow]'},{'name': 'StyleTableTitlesDirective', 'selector': '[appStyleTableTitles]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

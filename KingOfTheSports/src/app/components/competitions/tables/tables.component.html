@@ -1,6 +1,6 @@
 <div class="container move-up">
-    <h2 class="league-title">League table</h2>
-
+    <h2 appStyleTableTitles>League table</h2>
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
     <app-loader [loading]="loading" class="text-center"></app-loader>
 
     <table [hidden]="loading" class="table table-responsive table-bordered text-col">
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let team of list" [routerLink]="['/competition/:id', team.teamId]">
+            <tr appHoverTableRow *ngFor="let team of list" [routerLink]="['/competition/:id', team.teamId]">
                 <td>{{team.position}}</td>
                 <td><img class="img-responsive logo" [src]="team.crestURI" onError="this.src='./../../../assets/images/noImage.png'" /></td>
                 <td>{{team.teamName}}</td>
@@ -32,4 +32,5 @@
                 <td>{{team.points}}</td>
             </tr>
     </table>
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
 </div>

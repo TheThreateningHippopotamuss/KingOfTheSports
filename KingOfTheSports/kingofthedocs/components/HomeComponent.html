@@ -81,13 +81,7 @@
                                     <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/ContactModule.html" >ContactModule</a>
-                                </li>
-                                <li class="link">
                                     <a href="../modules/CoreModule.html" >CoreModule</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../modules/FooterModule.html" >FooterModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -132,6 +126,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -358,13 +355,7 @@
                                            <a href="../modules/CompetitionsRoutingModule.html" >CompetitionsRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/ContactModule.html" >ContactModule</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="../modules/CoreModule.html" >CoreModule</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../modules/FooterModule.html" >FooterModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SharedModule.html" >SharedModule</a>
@@ -409,6 +400,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/PlayersComponent.html" >PlayersComponent</a>
@@ -666,6 +660,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                 <a href="#theUser">theUser</a>
+                            </li>
+                            <li>
                                 <span class="modifier">Public</span> <a href="#toastr">toastr</a>
                             </li>
                         </ul>
@@ -700,7 +697,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/home/home.component.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/home/home.component.ts:11</a></div>
                                 </td>
                             </tr>
     
@@ -762,7 +759,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/home/home.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/home/home.component.ts:14</a></div>
                                 </td>
                             </tr>
     
@@ -788,6 +785,29 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <a name="theUser"></a>
+                            <span class="name"><b> theUser</b><a href="#theUser"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>theUser:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/home/home.component.ts:11</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <a name="toastr"></a>
                             <span class="name"><b><span class="modifier">Public</span> toastr</b><a href="#toastr"><span class="fa fa-link"></span></a></span>
                         </td>
@@ -806,7 +826,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/home/home.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/home/home.component.ts:12</a></div>
                                 </td>
                             </tr>
     
@@ -828,6 +848,7 @@ import { ToastsManager } from &#x27;ng2-toastr/ng2-toastr&#x27;;
 })
 export class HomeComponent implements OnInit {
 
+  theUser &#x3D; localStorage.getItem(&#x27;email&#x27;);
   constructor(public toastr: ToastsManager) { }
 
   ngOnInit() {
@@ -846,10 +867,18 @@ export class HomeComponent implements OnInit {
                 &lt;div class&#x3D;&quot;col-lg-8 mx-auto&quot;&gt;
                     &lt;h1 class&#x3D;&quot;brand-heading&quot;&gt;KING OF THE SPORTS&lt;/h1&gt;
                     &lt;p class&#x3D;&quot;intro-text&quot;&gt;Fixtures, Schedules, Teams, Results, Statistics. &lt;br&gt; Become a part of our community. Join now!&lt;/p&gt;
-                    &lt;a href&#x3D;&quot;#/login&quot; class&#x3D;&quot;btn btn-circle js-scroll-trigger&quot;&gt;
-                        &lt;i class&#x3D;&quot;fa fa-sign-in animated&quot;&gt;&lt;/i&gt;
-                        &lt;label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;enter&lt;/label&gt;
-                    &lt;/a&gt;
+                    &lt;div *ngIf&#x3D;&quot;theUser&quot;&gt;
+                        &lt;a href&#x3D;&quot;#/competition&quot; class&#x3D;&quot;btn btn-circle js-scroll-trigger&quot;&gt;
+                            &lt;i class&#x3D;&quot;fa fa-sign-in animated&quot;&gt;&lt;/i&gt;
+                            &lt;label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;enter&lt;/label&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;!theUser&quot;&gt;
+                        &lt;a href&#x3D;&quot;#/login&quot; class&#x3D;&quot;btn btn-circle js-scroll-trigger&quot;&gt;
+                            &lt;i class&#x3D;&quot;fa fa-sign-in animated&quot;&gt;&lt;/i&gt;
+                            &lt;label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;enter&lt;/label&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -880,8 +909,8 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div id="header" class="masthead">    <div class="intro-body">        <div class="container">            <div class="row">                <div class="col-lg-8 mx-auto">                    <h1 class="brand-heading">KING OF THE SPORTS</h1>                    <p class="intro-text">Fixtures, Schedules, Teams, Results, Statistics. <br> Become a part of our community. Join now!</p>                    <a href="#/login" class="btn btn-circle js-scroll-trigger">                        <i class="fa fa-sign-in animated"></i>                        <label>&nbsp;&nbsp;&nbsp;enter</label>                    </a>                </div>            </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
+        var COMPONENT_TEMPLATE = '<div><div id="header" class="masthead">    <div class="intro-body">        <div class="container">            <div class="row">                <div class="col-lg-8 mx-auto">                    <h1 class="brand-heading">KING OF THE SPORTS</h1>                    <p class="intro-text">Fixtures, Schedules, Teams, Results, Statistics. <br> Become a part of our community. Join now!</p>                    <div *ngIf="theUser">                        <a href="#/competition" class="btn btn-circle js-scroll-trigger">                            <i class="fa fa-sign-in animated"></i>                            <label>&nbsp;&nbsp;&nbsp;enter</label>                        </a>                    </div>                    <div *ngIf="!theUser">                        <a href="#/login" class="btn btn-circle js-scroll-trigger">                            <i class="fa fa-sign-in animated"></i>                            <label>&nbsp;&nbsp;&nbsp;enter</label>                        </a>                    </div>                </div>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthNavComponent', 'selector': 'app-auth-nav'},{'name': 'CompetitionComponent', 'selector': 'app-competition'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FixturesComponent', 'selector': 'app-fixtures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PlayersComponent', 'selector': 'app-players'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TablesComponent', 'selector': 'app-tables'}];
     var DIRECTIVES = [{'name': 'HoverTableRowDirective', 'selector': '[appHoverTableRow]'},{'name': 'StyleTableTitlesDirective', 'selector': '[appStyleTableTitles]'}];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>
