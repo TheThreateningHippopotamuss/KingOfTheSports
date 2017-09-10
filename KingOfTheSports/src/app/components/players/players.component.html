@@ -13,6 +13,11 @@
                 <th class="text-col">Date of Birth</th>
             </tr>
         </thead>
+        <tbody *ngIf="!hasPlayers">
+            <tr>
+                <td class="text-col" colspan="5">Sorry! No data found</td>
+            </tr>
+        </tbody>
         <tbody>
             <tr *ngFor="let player of listPlayers">
                 <td>{{player.jerseyNumber}}</td>
@@ -21,5 +26,6 @@
                 <td>{{player.nationality}}</td>
                 <td>{{player.dateOfBirth}}</td>
             </tr>
+        </tbody>
     </table>
 </div>

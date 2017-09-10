@@ -17,6 +17,7 @@ tbody>tr:hover{
 
 .text-col{
     text-align: center;
+    vertical-align: middle;
 }
 
 td{
