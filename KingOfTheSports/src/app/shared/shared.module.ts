@@ -7,6 +7,6 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   declarations: [LoaderComponent],
-  exports: [LoaderComponent]
+  exports: [LoaderComponent, CommonModule,]
 })
 export class SharedModule { }

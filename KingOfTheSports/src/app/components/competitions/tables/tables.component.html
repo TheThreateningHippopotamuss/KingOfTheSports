@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let team of list" [routerLink]="['/team', team.teamId]">
+            <tr *ngFor="let team of list" [routerLink]="['/competition/:id', team.teamId]">
                 <td>{{team.position}}</td>
                 <td><img class="img-responsive logo" [src]="team.crestURI" onError="this.src='./../../../assets/images/noImage.png'" /></td>
                 <td>{{team.teamName}}</td>

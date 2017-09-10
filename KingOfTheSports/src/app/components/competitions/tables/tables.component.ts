@@ -1,7 +1,7 @@
 import { element } from 'protractor';
-import { Team } from './../../../models/team';
+import { Team } from './../../../../models/team';
 import { Component, OnInit } from '@angular/core';
-import { TablesService } from './../../services/api/tables.service';
+import { TablesService } from './../../../services/api/tables.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({

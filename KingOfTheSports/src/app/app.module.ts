@@ -1,40 +1,39 @@
 import { FooterModule } from './components/footer/footer.module';
-import { TablesService } from './services/api/tables.service';
-import { PlayersServices } from './services/api/players.service';
-import { SharedModule } from './shared/shared.module';
-import { FixturesServices } from './services/api/fixtures.service';
+
 import { FixturesComponent } from './components/fixtures/fixtures.component';
-import { CompetitionsService } from './services/api/competitions.service';
-import { CompetitionComponent } from './components/competition/competition.component';
-import { AuthService } from './services/auth.service';
-import { Http, HttpModule } from '@angular/http';
+
 import { ContactModule } from './components/contact/contact.module';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AlertModule } from 'ngx-bootstrap';
-import { TablesComponent } from './components/tables/tables.component';
-import { PlayersComponent } from './components/players/players.component';
 
+
+import { Http, HttpModule } from '@angular/http';
+
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { AlertModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { AuthModule } from './components/auth/auth.module';
+import { SharedModule } from './shared/shared.module';
+
 import { FormsModule } from '@angular/forms/';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgModule } from '@angular/core';
+import { CompetitionsModule } from './components/competitions/competitions.module';
+import {CoreModule} from './core/core.module'
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CompetitionComponent,
-    FixturesComponent,
-    TablesComponent,
-    PlayersComponent,
+    AppComponent,   
+    FixturesComponent,    
     HomeComponent
   ],
   imports: [
@@ -52,8 +51,11 @@ import { NgModule } from '@angular/core';
     FooterModule,
     BrowserAnimationsModule,
     ToastModule.forRoot(),
+
+    CoreModule,
+    CompetitionsModule
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
