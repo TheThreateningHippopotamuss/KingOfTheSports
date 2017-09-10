@@ -623,6 +623,14 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                    <code>
+                        FixturesServices
+                    </code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -700,7 +708,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:16</a></div>
                                 </td>
                             </tr>
     
@@ -771,7 +779,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:20</a></div>
                                 </td>
                             </tr>
     
@@ -815,7 +823,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:15</a></div>
                                 </td>
                             </tr>
     
@@ -844,7 +852,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:16</a></div>
                                 </td>
                             </tr>
     
@@ -873,7 +881,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/fixtures/fixtures.component.ts:18</a></div>
                                 </td>
                             </tr>
     
@@ -885,14 +893,16 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { FixturesServices } from &#x27;./../../services/api/fixtures.service&#x27;;
-import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+import { FixturesServices } from &#x27;./../../services/api/fixtures.service&#x27;;
 import { ToastsManager } from &#x27;ng2-toastr/ng2-toastr&#x27;;
 
 @Component({
   selector: &#x27;app-fixtures&#x27;,
   templateUrl: &#x27;./fixtures.component.html&#x27;,
-  styleUrls: [&#x27;./fixtures.component.css&#x27;]
+  styleUrls: [&#x27;./fixtures.component.css&#x27;],
+  providers: [FixturesServices]
 })
 
 export class FixturesComponent implements OnInit {
