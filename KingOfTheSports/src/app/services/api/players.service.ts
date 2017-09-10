@@ -14,12 +14,12 @@ export class PlayersServices {
 
     constructor(private http: Http) { }
 
-    get(id): Observable<any> {
+    get(id): Observable<Player[]> {
         this.playersUrl = ApiHelper.playersUrls(id);
-
+        console.log(this.playersUrl);
         return this.http.get(
             this.playersUrl,
             { headers: this.headers })
-            .map(r =><Player[]> r.json().players);
+            .map(r => <Player[]>r.json().players);
     }
 }

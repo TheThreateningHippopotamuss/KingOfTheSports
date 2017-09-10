@@ -4,6 +4,5 @@ export class Player {
     position: string;
     dateOfBirth: Date;
     jerseyNumber: number;
-    nationality: string;    
-
+    nationality: string;
 }
