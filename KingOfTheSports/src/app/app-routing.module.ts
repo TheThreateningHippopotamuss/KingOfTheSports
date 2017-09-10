@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './services/auth.guard';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+
 
 const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +19,8 @@ const routes: Routes = [
       { path: 'competition', loadChildren: './components/competitions/competitions.module#CompetitionsModule', canActivate: [AuthGuard] },
       { path: 'login', component: LoginComponent, canActivate: [UnauthGuard] },
       { path: 'register', component: RegisterComponent, canActivate: [UnauthGuard] },
-      { path: '**', redirectTo: 'home' },
+      { path: '**', component: NotFoundComponent },
+
 ];
 
 @NgModule({
