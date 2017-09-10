@@ -1,3 +1,4 @@
+import { UnauthGuard } from './services/unauth.guard';
 import { AuthService } from './services/auth.service';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { RegisterComponent } from './components/auth/register/register.component';
@@ -12,10 +13,10 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'fixtures', component: FixturesComponent },
-      { path: 'competition', loadChildren: './components/competitions/competitions.module#CompetitionsModule'},
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
+      { path: 'fixtures', component: FixturesComponent, canActivate: [AuthGuard] },
+      { path: 'competition', loadChildren: './components/competitions/competitions.module#CompetitionsModule', canActivate: [AuthGuard] },
+      { path: 'login', component: LoginComponent, canActivate: [UnauthGuard] },
+      { path: 'register', component: RegisterComponent, canActivate: [UnauthGuard] },
       { path: '**', redirectTo: 'home' },
 ];
 

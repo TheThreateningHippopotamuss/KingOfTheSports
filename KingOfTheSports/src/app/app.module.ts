@@ -1,4 +1,3 @@
-import { AuthGuard } from './services/auth.guard';
 import { FooterModule } from './components/footer/footer.module';
 
 import { FixturesComponent } from './components/fixtures/fixtures.component';
