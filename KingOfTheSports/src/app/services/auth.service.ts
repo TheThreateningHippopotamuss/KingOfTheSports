@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import {
-    CanActivate,
     Router,
     ActivatedRouteSnapshot,
     RouterStateSnapshot
 } from '@angular/router';
 
 @Injectable()
-export class AuthService implements CanActivate {
+export class AuthService {
 
     isUserLoggedIn = false;
 
     userEmail: string;
 
     authUser: any;
+
 
     constructor(private router: Router) {
         firebase.initializeApp({
@@ -25,10 +25,6 @@ export class AuthService implements CanActivate {
             storageBucket: 'king-of-the-sports.appspot.com',
             messagingSenderId: '724985830867'
         });
-    }
-
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        return this.verifyLogin(state.url);
     }
 
     verifyLogin(url: string): boolean {

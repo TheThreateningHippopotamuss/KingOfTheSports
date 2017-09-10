@@ -425,3 +425,11 @@ body {
 .move-up {
     margin-bottom: 30px;
 }
+
+.hover-enlarge {
+    transition: all .2s ease-in-out
+}
+
+.hover-enlarge:hover {
+    transform: scale(1.3);
+}

@@ -48,4 +48,8 @@ export class TablesComponent implements OnInit {
       );
     });
   }
+
+  goBack() {
+    history.go(-1);
+  }
 }

@@ -1,6 +1,6 @@
 <div class="container move-up">
     <h2 class="players-title">Players</h2>
-
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
     <app-loader [loading]="loading" class="text-center"></app-loader>
 
     <table [hidden]="loading" class="table table-responsive table-bordered text-col">
@@ -28,4 +28,5 @@
             </tr>
         </tbody>
     </table>
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
 </div>

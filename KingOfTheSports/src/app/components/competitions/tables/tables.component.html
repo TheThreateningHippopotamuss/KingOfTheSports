@@ -1,6 +1,6 @@
 <div class="container move-up">
     <h2 class="league-title">League table</h2>
-
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
     <app-loader [loading]="loading" class="text-center"></app-loader>
 
     <table [hidden]="loading" class="table table-responsive table-bordered text-col">
@@ -32,4 +32,5 @@
                 <td>{{team.points}}</td>
             </tr>
     </table>
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fa fa-arrow-left"></i> BACK</button>
 </div>

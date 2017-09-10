@@ -46,4 +46,8 @@ export class PlayersComponent implements OnInit {
       );
     });
   }
+
+  goBack() {
+    history.go(-1);
+  }
 }

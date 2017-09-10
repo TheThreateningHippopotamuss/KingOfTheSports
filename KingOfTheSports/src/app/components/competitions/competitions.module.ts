@@ -7,10 +7,9 @@ import { PlayersComponent } from './players/players.component';
 import { TablesComponent } from './tables/tables.component';
 
 @NgModule({
-  imports: [   
+  imports: [
     CompetitionsRoutingModule,
     SharedModule,
-
   ],
   declarations: [
     CompetitionComponent,
