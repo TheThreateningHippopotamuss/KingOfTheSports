@@ -23,7 +23,12 @@
             "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
         ],
         "scripts": [
-            "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
+            "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js",
+            "../src/assets/vendor/jquery/jquery.min.js",
+            "../src/assets/vendor/popper/popper.min.js",
+            "../src/assets/vendor/bootstrap/js/bootstrap.min.js",
+            "../src/assets/vendor/jquery-easing/jquery.easing.min.js",
+           "../src/assets/js/grayscale.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {
