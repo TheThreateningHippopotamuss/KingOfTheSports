@@ -16,6 +16,7 @@ export class AuthService implements CanActivate {
 
     authUser: any;
 
+
     constructor(private router: Router) {
         firebase.initializeApp({
             apiKey: 'AIzaSyB27Mt_ANgN-VWTAP1fLbDY70UfNesFWto',
@@ -42,6 +43,10 @@ export class AuthService implements CanActivate {
 
     register(email: string, password: string) {
         return firebase.auth().createUserWithEmailAndPassword(email, password);
+    }
+
+    get authenticated(): boolean {
+        return this.isUserLoggedIn;
     }
 
     verifyUser() {

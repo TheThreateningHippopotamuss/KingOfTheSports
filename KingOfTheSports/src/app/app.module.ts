@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth.guard';
 import { FooterModule } from './components/footer/footer.module';
 
 import { FixturesComponent } from './components/fixtures/fixtures.component';
@@ -27,13 +28,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgModule } from '@angular/core';
 import { CompetitionsModule } from './components/competitions/competitions.module';
-import {CoreModule} from './core/core.module'
+import {CoreModule} from './core/core.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,   
-    FixturesComponent,    
+    AppComponent,
+    FixturesComponent,
     HomeComponent
   ],
   imports: [
