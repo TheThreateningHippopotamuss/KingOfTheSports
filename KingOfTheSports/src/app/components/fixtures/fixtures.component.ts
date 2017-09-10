@@ -22,11 +22,10 @@ export class FixturesComponent implements OnInit {
       .subscribe((f) => {
         this.fixtures = f.fixtures;
         this.loading = false;
-        this.toastr.success('In fixture component!');
       },
       (err) => {
         this.loading = false;
-        this.toastr.error('fixture service - Please try again!');
+        this.toastr.error(`Please try again later! ${err.message}`);
       });
 
   }
