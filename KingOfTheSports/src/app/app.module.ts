@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth.guard';
 import { FooterModule } from './components/footer/footer.module';
 import { TablesService } from './services/api/tables.service';
 import { PlayersServices } from './services/api/players.service';
@@ -53,7 +54,12 @@ import { NgModule } from '@angular/core';
     BrowserAnimationsModule,
     ToastModule.forRoot(),
   ],
-  providers: [AuthService, CompetitionsService, FixturesServices, TablesService, PlayersServices],
+  providers: [AuthService,
+    CompetitionsService,
+    FixturesServices,
+    TablesService,
+    PlayersServices,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
