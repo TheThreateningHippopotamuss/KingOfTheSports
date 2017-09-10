@@ -24,7 +24,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NgModule } from '@angular/core';
 
 import { CompetitionsModule } from './components/competitions/competitions.module';
-import { CoreModule } from './core/core.module'
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
