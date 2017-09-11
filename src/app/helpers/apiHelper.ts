@@ -1,6 +1,6 @@
 export class ApiHelper {
 
-    static baseUrl = 'http://api.football-data.org/v1';
+    static baseUrl = 'https://api.football-data.org/v1';
 
     static mainRoutes = {
         competitions: <string>'/competitions',
