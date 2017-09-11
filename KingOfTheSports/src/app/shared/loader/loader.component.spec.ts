@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+
 import { LoaderComponent } from './loader.component';
 
 describe('LoaderComponent', () => {
@@ -29,5 +30,7 @@ describe('LoaderComponent', () => {
     //     let el: HTMLElement = de.nativeElement;
 
     //     expect(el.innerText).toContain('data');
+
     // });
+
 });
