@@ -1,5 +1,7 @@
 # King Of The Sports
 
+Link to the project [HERE](https://kingofthesports.herokuapp.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.0.
 
 ## Documentation
